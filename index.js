@@ -6,11 +6,11 @@ const req_data = require('./req_data');
 const Postbacks = require('./postbacks');
 const Messages = require('./messages');
 const get_started = require('./get_started');
-
 require('dotenv').config();
 
 app = express(); app.use(bodyParser.json());
 
+// Calling Functions to Setup the App
 m_setup();
 page_subscribe();
 get_started();
@@ -32,9 +32,11 @@ app.post('/webhook', (req, res) => {
         // Pass the event to handlePostBack function if Quick Reply or Postback.
         // Otherwise, pass the event to handleMessage function.
         if (webhook_event.message && !webhook_event.message.quick_reply) {
-          Messages(sender_psid, webhook_event);  
+            // Calling Function to handle Messages.
+            Messages(sender_psid, webhook_event);  
         } else if (webhook_event.postback || (webhook_event.message && webhook_event.message.quick_reply)) {
-          Postbacks(sender_psid, webhook_event);
+            // Calling Function to handle Postbacks
+            Postbacks(sender_psid, webhook_event);
         }
       }});
 

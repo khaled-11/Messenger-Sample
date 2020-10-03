@@ -1,17 +1,15 @@
+// This Function calls the Graph API to reply to the user
 const request = require('request');
 
 module.exports = async (sender_psid, response) => {
-    // Decalre some variables for the request.
     var request_body;
     var token = process.env.PAGE_ACCESS_TOKEN;
-
         request_body = {
         "recipient": {
         "id": sender_psid
         },
         "message": response
         }
-
         try{
             request(
                 {
