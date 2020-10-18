@@ -1,31 +1,84 @@
-// This Function calls the Graph API to reply to the user
-const request = require('request');
+//// Function to send responses to the user via Graph API ////
+const rp = require('request-promise'),
+fs = require('fs');
 
-module.exports = async (sender_psid, response) => {
+module.exports = async (sender_psid, response, action, fileData) => {
+    // Decalre some variables for the request.
     var request_body;
+    var state;
     var token = process.env.PAGE_ACCESS_TOKEN;
+    // Check response type and struch the request body.
+    if (!action){
         request_body = {
         "recipient": {
         "id": sender_psid
         },
         "message": response
         }
-        try{
-            request(
-                {
-                    uri: `https://graph.facebook.com/v7.0/me/messages?access_token=${token}`,
-                    qs: request_body,
-                    method: "POST"
-                },
-                (error, _res, body) => {
-                  if (!error) {
-                    console.log("STATE:", JSON.parse(body));
-                  } else {
-                    console.error("Errors:", error);
-                  }
-                }
-            );
-        } catch (e) {
-            console.log(e)
+    } 
+    else {
+        request_body = {
+        "recipient": {
+        "id": sender_psid
+        },
+        "sender_action":action
         }
     }
+
+    // Try the request after setting up the request_body.
+    try{
+        // If it is a regular Response or action.
+        if(!fileData){
+            var options = {
+                method: 'POST',
+                uri: `https://graph.facebook.com/v8.0/me/messages?access_token=${token}`,
+                body: request_body,
+                json: true
+            };
+            state = await rp(options);
+        }
+        // If the response is File attachment from the local server. 
+        else{
+            var fileReaderStream = fs.createReadStream(fileData)
+                if (fileData.includes("mp3")){
+                formData = {
+                recipient: JSON.stringify({
+                id: sender_psid
+                }),
+                message: JSON.stringify({
+                    attachment: {
+                    type: 'audio',
+                payload: {
+                is_reusable: false
+                }}
+                }),
+                filedata: fileReaderStream
+                }
+            }else{
+            formData = {
+            recipient: JSON.stringify({
+            id: sender_psid
+            }),
+            message: JSON.stringify({
+                attachment: {
+                type: 'file',
+            payload: {
+            is_reusable: false
+            }}
+            }),
+            filedata: fileReaderStream
+            }}
+            var options = {
+                method: 'POST',
+                uri: `https://graph.facebook.com/v7.0/me/messages?access_token=${token}`,
+                formData: formData,
+                json: true
+            };
+            state = await rp(options);
+        }
+    }
+    catch (e){
+        console.log(e);
+    }
+    return state;
+}

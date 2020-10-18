@@ -1,19 +1,51 @@
 const express = require('express'),
-bodyParser = require('body-parser');
-const page_subscribe = require('./page_subscribe');
-const m_setup = require('./m_setup');
-const req_data = require('./req_data');
-const Postbacks = require('./postbacks');
-const Messages = require('./messages');
-const get_started = require('./get_started');
+bodyParser = require('body-parser'),
+fs = require("fs"),
+path = require("path"),
+subscribePage = require('./page_subscribe'),
+setUpCallbackURL = require('./messenger_setup'),
+handlePostbacks = require('./handle_postbacks'),
+handleMessages = require('./handle_messages'),
+setGetStarted = require('./get_started'),
+setPersistentMenu = require('./persistent_menu'),
+whiteListURL = require('./whitelist_domain'),
+setGreeting = require('./set_greeting');
 require('dotenv').config();
 
+// Create App object in epress and use bodyparser to read the webhook body.
 app = express(); app.use(bodyParser.json());
 
-// Calling Functions to Setup the App
-m_setup();
-page_subscribe();
-get_started();
+// Setting Views & Public Files folders. 
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
+
+// Using EJS engine to render pages.
+app.set("view engine", "ejs");
+
+// Reading greeting messages in the config file and setup the Messenger App.
+const appConfig = (JSON.parse(fs.readFileSync('./config.json', {encoding:'utf8', flag:'r'}))).greetings; 
+
+// Calling ASYNC function to Setup the App in order.
+appStart();
+async function appStart(){
+// Activate Get Started Button and subscribe the page to App & Events.
+await setGetStarted();
+await subscribePage();
+// Set the Greeting Message and whitelist the App domain.
+await setGreeting(appConfig.greeting);
+await whiteListURL();
+// Set the persistent menu and the callback URL.
+await setPersistentMenu();
+await setUpCallbackURL();
+}
+
+var i = 0;
+// The landing page for the server
+app.get("/", function (req, res){
+  i++;
+  // Send Index Page with greeting message for web plugin
+  res.render("index",{web_greeting_logged_in:appConfig.web_greeting_logged_in, web_greeting_logged_out:appConfig.web_greeting_logged_out})
+});
 
 ///////////////////////////////////////////////////////
 /// Webhook Endpoint For the Facebook Messenger App ///
@@ -28,18 +60,16 @@ app.post('/webhook', (req, res) => {
         webhook_event = entry.messaging[0];
         // Get the sender PSID
         let sender_psid = webhook_event.sender.id;
-
         // Pass the event to handlePostBack function if Quick Reply or Postback.
         // Otherwise, pass the event to handleMessage function.
         if (webhook_event.message && !webhook_event.message.quick_reply) {
             // Calling Function to handle Messages.
-            Messages(sender_psid, webhook_event);  
-        } else if (webhook_event.postback || (webhook_event.message && webhook_event.message.quick_reply)) {
+            handleMessages(sender_psid, webhook_event);  
+        } else {
             // Calling Function to handle Postbacks
-            Postbacks(sender_psid, webhook_event);
+            handlePostbacks(sender_psid, webhook_event);
         }
       }});
-
     // Returns a '200 OK' response to all requests
     res.status(200).send('EVENT_RECEIVED');
     } else {
@@ -48,7 +78,7 @@ app.post('/webhook', (req, res) => {
     }
   });
   
-  // Adds support for GET requests to our webhook
+  // Adds support for GET requests to the webhook
   app.get('/webhook', (req, res) => {    
     // Parse the query params
     let mode = req.query['hub.mode'];
@@ -68,6 +98,5 @@ app.post('/webhook', (req, res) => {
     }
   });
   
-
 // listen for webhook events //
 app.listen(process.env.PORT || 3370, () => console.log('webhook is listening'));

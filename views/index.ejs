@@ -1,0 +1,90 @@
+<title>123 Chatbot</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    123 Chatbot
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">123 Chatbot</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <br>
+    <center>
+      <button id="d_button">Diaplay Plugin</button>
+      <br><br>
+      <button id="h_button">Hide Plugin</button>
+
+    </center>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </div>
+</div>
+
+</body>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v8.0'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+  id="fb-customerchat"
+  style="display:full"
+  attribution=setup_tool
+  page_id="<%=process.env.PAGE_ID%>"
+  theme_color="#2BB02B"
+  logged_in_greeting="<%=web_greeting_logged_in%>"
+  logged_out_greeting="<%=web_greeting_logged_out%>">
+</div>
+
+<script>
+  document.getElementById('d_button').onclick = function() {
+    console.log(document.getElementById('fb-customerchat').attributes.style.value)
+    FB.CustomerChat.show();
+  }
+  document.getElementById('h_button').onclick = function() {
+    console.log(document.getElementById('fb-customerchat').attributes.style.value)
+    FB.CustomerChat.hide();
+  }
+</script>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root" ></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v8.0'
+    });
+  };
+</script>
+    

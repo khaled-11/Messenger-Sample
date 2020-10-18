@@ -1,0 +1,256 @@
+{
+    "greetings":{
+        "greeting":"Hi {{user_first_name}}, greeting",
+        "web_greeting_logged_out":"greeting in web logged out",
+        "web_greeting_logged_in":"greeting in web looged in"
+    },
+
+    
+    "persistent_menu":[
+        {
+            "locale": "default",
+            "composer_input_disabled": false,
+            "call_to_actions": [
+                {
+                "type": "web_url",
+                "title": "Facebook Page",
+                "url": "https://www.facebook.com/{{page_id}}"
+                }, {
+                    "type": "web_url",
+                    "title": "Developer Page",
+                    "url": "https://www.facebook.com/techolopia"
+                }, {
+                    "type": "web_url",
+                    "title": "Website",
+                    "url": "https://www.techolopia.com"
+                }, {
+                    "type": "web_url",
+                    "title": "Shop",
+                    "url": "https://www.facebook.com/techolopia"
+                }, {
+                    "type": "postback",
+                    "title": "Customer Service",
+                    "payload": "CS"
+                }
+            ]
+        }
+    ],
+
+
+    "postbacks":{
+        "HANDOVER_TO_INBOX":[
+            {"response" : {"text": "{{user_first_name}}, one of our representatives will help you shortly!"}}
+        ],
+        "GUEST_TO_INBOX":[
+            {"response" : {"text": "{{user_first_name}}, please login with your Facebook account to connect with our customer service!"}}
+        ],
+        "HANDOVER_FROM_INBOX":[
+            {"response" : {"text": "{{user_first_name}}, I hope our customer service department were able to help you.\nPlease rate yor experience below to help better assist you in the future.", "quick_replies": [
+                {
+                    "content_type":"text",
+                    "title":"Happy",
+                    "payload":"GET_STARTED_REF_test"
+                  }, {
+                    "content_type":"text",
+                    "title":"Neutral",
+                    "payload":"GET_STARTED"
+                  }, {
+                      "content_type":"text",
+                      "title":"Not Happy",
+                      "payload":"DONE"
+                  }
+              ]}
+            }
+        ],
+        "GET_STARTED":[
+            {"response" : {"text": "Welcome to our page, {{user_first_name}}!"}
+            } 
+        ],
+        "GET_STARTED_WEB_PLUGIN":[
+            {"response" : {"text": "Welcome to our website", "quick_replies": [
+                {
+                  "content_type":"text",
+                  "title":"Shop Products",
+                  "payload":"CHANGE_GREETING"
+                }, {
+                  "content_type":"text",
+                  "title":"Learn More",
+                  "payload":"DONE"
+                }
+              ]}
+            }
+        ],
+        "GET_STARTED_REF_50_off":[
+            {
+                "response" : {"text": "{{user_first_name}}, congratulation.]n You got 50% off!"}
+            },
+            {"response" : {"text": "How to redeem", "quick_replies": [
+                {
+                  "content_type":"text",
+                  "title":"Shop",
+                  "payload":"CHANGE_GREETING"
+                }, {
+                  "content_type":"text",
+                  "title":"Limitations",
+                  "payload":"DONE"
+                }
+              ]}
+            }
+        ]
+    },
+
+
+    "intents":{
+
+        "Intent_not_found_error":{
+            "responses":
+                {
+                    "response" : {"text": "{{user_first_name}}, we are having trouble with that right now."}
+                }
+        },
+
+        "out_of_scope":{"responses":[
+            {
+                "response" : { "text":"I am so sorry, I didn't catch '{{text}}'.\nCan you repeat that please"}
+            },
+            {
+                "response" : {"text": "Main Menu! Welcome {{user_first_name}}", "quick_replies": [
+                    {
+                      "content_type":"text",
+                      "title":"Change Message ❌",
+                      "payload":"CHANGE_GREETING"
+                    }, {
+                      "content_type":"text",
+                      "title":"Done ✅",
+                      "payload":"DONE"
+                    }
+                ]}
+            }
+        ]},
+
+        "shop_products":{
+            "responses":[
+                {
+                    "response" : {"text": "Here is our popular products:"}
+                }, {
+                    "response" : {"attachment":{
+                        "type":"template",
+                        "payload":{
+                          "template_type":"generic","elements": [
+                          {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://6b0962dedaa5.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Offers"}]},
+                          {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://6b0962dedaa5.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Offers"}]},
+                          {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://6b0962dedaa5.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Offers"}]}
+                        ]}
+                    }}
+                }
+            ]
+        },
+
+        "welcome":{
+            "responses":[
+                {
+                    "response" : { "text":"{{user_first_name}}, I am so happy to assist you today."}
+                },{
+                    "response" : { "text":"You can choose from below:", "quick_replies": [
+                        {
+                          "content_type":"text",
+                          "title":"Option 1",
+                          "payload":"CHANGE_GREETING"
+                        }, {
+                          "content_type":"text",
+                          "title":"Option 2",
+                          "payload":"DONE"
+                        }
+                      ]}
+                }
+            ]
+        },
+
+        "location":{
+            "responses":[
+                {
+                    "response" : { "text":"intent location here"}
+                },{
+                    "response" : { "text":"Hi again"}
+                },{
+                    "response" : { 
+                        "attachment":{
+                          "type":"template",
+                          "payload":{
+                            "template_type":"generic",
+                            "elements": [{"title": "title" , "subtitle":"abstract", "default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url": "https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]},
+                            {"title": "title" , "subtitle":"abstract", "default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]}
+                          ]
+                          }
+                        }
+                    }
+                }
+            ]
+        },
+
+        "question":{
+            "entities":
+            [ 
+                {
+                    "entity":"question_type",
+                    "name":"return product",
+                    "responses":[
+                        {
+                            "response" : { 
+                                "attachment":{
+                                    "type":"template",
+                                    "payload":{
+                                      "template_type":"generic",
+                                      "elements": [{"title": "title" , "subtitle":"abstract", "image_url":"https://074b36da562c.ngrok.io/remind.png", "default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url": "https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://074b36da562c.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]},
+                                      {"title": "title" , "subtitle":"abstract", "image_url":"https://074b36da562c.ngrok.io/remind.png","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]}
+                                    ]}
+                                }
+                            }                        
+                        },{
+                            "response" : {"text": "Hiiiii :D\nWelcome {{user_first_name}}", "quick_replies": [
+                                {
+                                  "content_type":"text",
+                                  "title":"Change Message ❌",
+                                  "payload":"CHANGE_GREETING"
+                                }, {
+                                  "content_type":"text",
+                                  "title":"Done ✅",
+                                  "payload":"DONE"
+                                }
+                              ]}
+                        }
+                    ]
+                },                 
+                {
+                    "entity":"question_type",
+                    "name":"buy product",
+                    "responses":[
+                        {
+                            "response" : { "text":"buy product entity"}
+                        },{
+                            "response" : { "text":"Hi again {{user_first_name}}"}
+                        }
+                    ]
+                }
+            ], 
+            "not_in_config_errors":
+            {
+                "text": "This Entity is not in the config file for this intent and for the recognized entity.\nExample to handle: 'Looks like you are looking for abc, {{user_first_name}}, please choose from below:'", "quick_replies": [
+                    {
+                      "content_type":"text",
+                      "title":"One",
+                      "payload":"CHANGE_GREETING"
+                    }, {
+                      "content_type":"text",
+                      "title":"Two",
+                      "payload":"DONE"
+                    }
+                ]
+            },
+            "type_not_found_error":
+            {
+                "text": "The intent type is not in the config file. You better add it in the config file.\nExample to handle: 'I think you need to ask question, but I am having a trouble right now!'"
+            }
+        }
+    }
+}
