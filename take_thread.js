@@ -1,4 +1,4 @@
-//   Function to Pass Thread Control   //
+//   Function to Take Thread Control   //
 const rp = require('request-promise'),
 firstMessages = require("./handle_messages");
 

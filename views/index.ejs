@@ -23,11 +23,12 @@ body, html {height: 100%}
     <h1 class="w3-jumbo w3-animate-top">123 Chatbot</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <br>
+
+<!-- Buttons to test plugin controls -->
     <center>
       <button id="d_button">Diaplay Plugin</button>
       <br><br>
       <button id="h_button">Hide Plugin</button>
-
     </center>
   </div>
   <div class="w3-display-bottomleft w3-padding-large">
@@ -66,13 +67,12 @@ body, html {height: 100%}
   logged_out_greeting="<%=web_greeting_logged_out%>">
 </div>
 
+<!-- Excute on buttons click (Hide/Show Customer Chat Plugin using the SDK) -->
 <script>
   document.getElementById('d_button').onclick = function() {
-    console.log(document.getElementById('fb-customerchat').attributes.style.value)
     FB.CustomerChat.show();
   }
   document.getElementById('h_button').onclick = function() {
-    console.log(document.getElementById('fb-customerchat').attributes.style.value)
     FB.CustomerChat.hide();
   }
 </script>

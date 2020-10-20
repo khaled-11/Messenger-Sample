@@ -20,7 +20,7 @@ request_body = {
   console.log("WhiteList Domains:" , state);
   }
   catch (e){
-      console.log("whitelist domains has error: ", e)
+      console.log("whitelist domains has error: ", e.message)
   }
    return state;
 }

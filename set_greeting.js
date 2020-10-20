@@ -16,7 +16,7 @@ module.exports = async (msg) => {
     results = await rp(options);
   }
   catch (e){
-    console.log(e);
+    console.log(e.message);
   }
   console.log("Greeting: ", results)
   return results;  

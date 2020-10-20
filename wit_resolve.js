@@ -1,3 +1,4 @@
+// Function to get the NLP from the Wit App
 const rp = require('request-promise'),
 fs = require("fs");
 
@@ -14,7 +15,7 @@ module.exports = async (text) => {
     state = await JSON.parse(await rp(options));
     }
     catch (e){
-        console.log(e)
+        console.log(e.message)
     }
     return state;
 };

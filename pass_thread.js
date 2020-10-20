@@ -1,10 +1,7 @@
-////////////////////////////////////////////////////
-//   Asynchronous Module to Pass Thread Control   //
-////////////////////////////////////////////////////
+// Function to pass thread control
 const rp = require('request-promise');
 
 module.exports = async (sender_psid) => {
-appID = 263902037430900;
 token = process.env.PAGE_ACCESS_TOKEN;
 // Construct the message body
 var request_body;

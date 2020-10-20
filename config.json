@@ -1,11 +1,10 @@
 {
     "greetings":{
-        "greeting":"Hi {{user_first_name}}, greeting",
-        "web_greeting_logged_out":"greeting in web logged out",
-        "web_greeting_logged_in":"greeting in web looged in"
+        "greeting":"Hi {{user_first_name}}, welcome to our page Chatbot!",
+        "web_greeting_logged_out":"Welcome to our website, please login to keep your chat history!",
+        "web_greeting_logged_in":"Welcome to our website. you can continue with your account to see the history!"
     },
 
-    
     "persistent_menu":[
         {
             "locale": "default",
@@ -15,11 +14,7 @@
                 "type": "web_url",
                 "title": "Facebook Page",
                 "url": "https://www.facebook.com/{{page_id}}"
-                }, {
-                    "type": "web_url",
-                    "title": "Developer Page",
-                    "url": "https://www.facebook.com/techolopia"
-                }, {
+                },  {
                     "type": "web_url",
                     "title": "Website",
                     "url": "https://www.techolopia.com"
@@ -28,6 +23,10 @@
                     "title": "Shop",
                     "url": "https://www.facebook.com/techolopia"
                 }, {
+                    "type": "web_url",
+                    "title": "Email Developer",
+                    "url": "mailto:info@techolopia.com"
+                },{
                     "type": "postback",
                     "title": "Customer Service",
                     "payload": "CS"
@@ -41,90 +40,145 @@
         "HANDOVER_TO_INBOX":[
             {"response" : {"text": "{{user_first_name}}, one of our representatives will help you shortly!"}}
         ],
+
         "GUEST_TO_INBOX":[
             {"response" : {"text": "{{user_first_name}}, please login with your Facebook account to connect with our customer service!"}}
         ],
+
         "HANDOVER_FROM_INBOX":[
             {"response" : {"text": "{{user_first_name}}, I hope our customer service department were able to help you.\nPlease rate yor experience below to help better assist you in the future.", "quick_replies": [
                 {
                     "content_type":"text",
-                    "title":"Happy",
-                    "payload":"GET_STARTED_REF_test"
+                    "title":"Happy 😃",
+                    "payload":"HAPPY_PAYLOAD"
                   }, {
                     "content_type":"text",
-                    "title":"Neutral",
-                    "payload":"GET_STARTED"
+                    "title":"Neutral 😐",
+                    "payload":"Neutral_PAYLOAD"
                   }, {
                       "content_type":"text",
-                      "title":"Not Happy",
-                      "payload":"DONE"
+                      "title":"Not Happy 🙁",
+                      "payload":"BAD_PAYLOAD"
                   }
               ]}
             }
         ],
-        "GET_STARTED":[
-            {"response" : {"text": "Welcome to our page, {{user_first_name}}!"}
-            } 
+        "HAPPY_PAYLOAD":[
+            {
+                "response" : {"text": "We are excited, {{user_first_name}}! We are so happy that we were able to assist you today!"}
+            }
         ],
+        "NEUTRAL_PAYLOAD":[
+            {
+                "response" : {"text": "Thank you {{user_first_name}} for your feedback! We will try our best to better help you next time!"}
+            }
+        ],
+        "BAD_PAYLOAD":[
+            {
+                "response" : {"text": "{{user_first_name}}, I am so sorry for this bad experience. We will review your case and will follow up shortly!"}
+            }
+        ],
+        "DEMO":[
+            {
+                "response" : {"text": "This is for demo purposes."}
+            }
+        ],
+        "GET_STARTED":[
+            {
+                "response" : {"text": "Welcome to our page Chatbot, {{user_first_name}}!\nYou can ask me any question oir use the persistent menu to connect with Customer Service Agents."}
+            }, {
+                "response" : {"text": "This is a test image."}
+            }, {
+                "response" : {
+                    "attachment":{
+                      "type":"image", 
+                      "payload":{
+                        "url":"https://7a41cfad3644.ngrok.io/s_3.jpg", 
+                        "is_reusable":false
+                      }
+                    }}
+            }
+        ],
+
         "GET_STARTED_WEB_PLUGIN":[
             {"response" : {"text": "Welcome to our website", "quick_replies": [
                 {
                   "content_type":"text",
                   "title":"Shop Products",
-                  "payload":"CHANGE_GREETING"
+                  "payload":"SHOP_PRODUCTS"
                 }, {
                   "content_type":"text",
-                  "title":"Learn More",
+                  "title":"ASK_QUESTION",
                   "payload":"DONE"
                 }
               ]}
             }
         ],
-        "GET_STARTED_REF_50_off":[
+
+        "SHOP_PRODUCTS":[
+            {
+                "response" : {"text": "Here is our popular products:"}
+            }, {
+                "response" : {"attachment":{
+                    "type":"template",
+                    "payload":{
+                      "template_type":"generic","elements": [
+                      {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
+                      {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
+                      {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]}
+                    ]}
+                }}
+            }
+        ],
+
+        "ASK_QUESTION":[
+            {
+                "response" : {"text": "You can ask me any question you want, and I am ready to assist you!"}
+            }
+        ],
+
+        "GET_STARTED_REF_50_OFF":[
             {
                 "response" : {"text": "{{user_first_name}}, congratulation.]n You got 50% off!"}
             },
-            {"response" : {"text": "How to redeem", "quick_replies": [
+            {"response" : {"text": "You can shop now to redeem your discount.", "quick_replies": [
                 {
                   "content_type":"text",
                   "title":"Shop",
-                  "payload":"CHANGE_GREETING"
+                  "payload":"SHOP_PRODUCTS"
                 }, {
                   "content_type":"text",
                   "title":"Limitations",
-                  "payload":"DONE"
+                  "payload":"ASK_QUESTION"
                 }
               ]}
             }
         ]
     },
 
-
     "intents":{
-
-        "Intent_not_found_error":{
-            "responses":
-                {
-                    "response" : {"text": "{{user_first_name}}, we are having trouble with that right now."}
-                }
+        "voice_read_error":{
+                    "response" : {"text": "I am really Sorry, we are having technical issues right now.\nPlease can you try again!"}
         },
-
+        "no_sound":{
+                    "response" : {"text": "I am sorry, but I didn't hear any words."}
+        },
+        "setup_needed":{
+                    "response" : {"text": "I am really Sorry, the voice is not set up yet!"}
+        },
+        "non_audio":{
+                    "response" : {"text": "Sorry, we accept only voice attachments!"}
+        },
+        "technical_issue":{
+                    "response" : {"text": "I am really Sorry, we are having technical issues right now.\nPlease can you try again!"}
+        },
         "out_of_scope":{"responses":[
             {
                 "response" : { "text":"I am so sorry, I didn't catch '{{text}}'.\nCan you repeat that please"}
-            },
-            {
-                "response" : {"text": "Main Menu! Welcome {{user_first_name}}", "quick_replies": [
-                    {
-                      "content_type":"text",
-                      "title":"Change Message ❌",
-                      "payload":"CHANGE_GREETING"
-                    }, {
-                      "content_type":"text",
-                      "title":"Done ✅",
-                      "payload":"DONE"
-                    }
-                ]}
+            }, {
+                "response":{"file":"./audio/blank.mp3"}
+            }, {
+                "response" : { "text":"This is a test audio file!"}
             }
         ]},
 
@@ -137,9 +191,9 @@
                         "type":"template",
                         "payload":{
                           "template_type":"generic","elements": [
-                          {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://6b0962dedaa5.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Offers"}]},
-                          {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://6b0962dedaa5.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Offers"}]},
-                          {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://6b0962dedaa5.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Offers"}]}
+                          {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
+                          {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
+                          {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]}
                         ]}
                     }}
                 }
@@ -150,40 +204,6 @@
             "responses":[
                 {
                     "response" : { "text":"{{user_first_name}}, I am so happy to assist you today."}
-                },{
-                    "response" : { "text":"You can choose from below:", "quick_replies": [
-                        {
-                          "content_type":"text",
-                          "title":"Option 1",
-                          "payload":"CHANGE_GREETING"
-                        }, {
-                          "content_type":"text",
-                          "title":"Option 2",
-                          "payload":"DONE"
-                        }
-                      ]}
-                }
-            ]
-        },
-
-        "location":{
-            "responses":[
-                {
-                    "response" : { "text":"intent location here"}
-                },{
-                    "response" : { "text":"Hi again"}
-                },{
-                    "response" : { 
-                        "attachment":{
-                          "type":"template",
-                          "payload":{
-                            "template_type":"generic",
-                            "elements": [{"title": "title" , "subtitle":"abstract", "default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url": "https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]},
-                            {"title": "title" , "subtitle":"abstract", "default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]}
-                          ]
-                          }
-                        }
-                    }
                 }
             ]
         },
@@ -196,26 +216,15 @@
                     "name":"return product",
                     "responses":[
                         {
-                            "response" : { 
-                                "attachment":{
-                                    "type":"template",
-                                    "payload":{
-                                      "template_type":"generic",
-                                      "elements": [{"title": "title" , "subtitle":"abstract", "image_url":"https://074b36da562c.ngrok.io/remind.png", "default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url": "https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://074b36da562c.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]},
-                                      {"title": "title" , "subtitle":"abstract", "image_url":"https://074b36da562c.ngrok.io/remind.png","default_action": {"type": "web_url","url": "https://6b0962dedaa5.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Info Page"},{"type":"web_url","url":"https://6b0962dedaa5.ngrok.io","title":"Buy"}]}
-                                    ]}
-                                }
-                            }                        
-                        },{
-                            "response" : {"text": "Hiiiii :D\nWelcome {{user_first_name}}", "quick_replies": [
+                            "response" : {"text": "Hi {{user_first_name}}, can you tell me when did you buy this product?", "quick_replies": [
                                 {
                                   "content_type":"text",
-                                  "title":"Change Message ❌",
-                                  "payload":"CHANGE_GREETING"
+                                  "title":"Less than 7 days",
+                                  "payload":"DEMO"
                                 }, {
                                   "content_type":"text",
-                                  "title":"Done ✅",
-                                  "payload":"DONE"
+                                  "title":"More than 7 days",
+                                  "payload":"DEMO"
                                 }
                               ]}
                         }
@@ -226,30 +235,48 @@
                     "name":"buy product",
                     "responses":[
                         {
-                            "response" : { "text":"buy product entity"}
-                        },{
-                            "response" : { "text":"Hi again {{user_first_name}}"}
+                            "response" : {"text": "Hi {{user_first_name}}, You can shop the product list here, or contact customer service for help!", "quick_replies": [
+                                {
+                                  "content_type":"text",
+                                  "title":"Shop",
+                                  "payload":"SHOP_PRODUCTS"
+                                }, {
+                                  "content_type":"text",
+                                  "title":"Customer Service",
+                                  "payload":"CS"
+                                }
+                              ]}
                         }
                     ]
                 }
             ], 
-            "not_in_config_errors":
+            "entity_not_in_config_errors":
             {
-                "text": "This Entity is not in the config file for this intent and for the recognized entity.\nExample to handle: 'Looks like you are looking for abc, {{user_first_name}}, please choose from below:'", "quick_replies": [
+                "text": "I think you need to ask question, but I am having a trouble with the question type.\nPlease choose from below:","quick_replies": [
                     {
                       "content_type":"text",
-                      "title":"One",
-                      "payload":"CHANGE_GREETING"
+                      "title":"Buy Product",
+                      "payload":"DEMO"
                     }, {
                       "content_type":"text",
-                      "title":"Two",
-                      "payload":"DONE"
+                      "title":"Return Product",
+                      "payload":"DEMO"
                     }
                 ]
             },
-            "type_not_found_error":
+            "entity_type_not_found_error":
             {
-                "text": "The intent type is not in the config file. You better add it in the config file.\nExample to handle: 'I think you need to ask question, but I am having a trouble right now!'"
+                "text": "I think you need to ask question, but I am having a trouble with the question type.\nPlease choose from below:","quick_replies": [
+                    {
+                      "content_type":"text",
+                      "title":"Buy Product",
+                      "payload":"DEMO"
+                    }, {
+                      "content_type":"text",
+                      "title":"Return Product",
+                      "payload":"DEMO"
+                    }
+                ]
             }
         }
     }
