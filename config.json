@@ -23,10 +23,6 @@
                     "title": "Shop",
                     "url": "https://www.facebook.com/techolopia"
                 }, {
-                    "type": "web_url",
-                    "title": "Email Developer",
-                    "url": "mailto:info@techolopia.com"
-                },{
                     "type": "postback",
                     "title": "Customer Service",
                     "payload": "CS"
@@ -93,7 +89,7 @@
                     "attachment":{
                       "type":"image", 
                       "payload":{
-                        "url":"https://7a41cfad3644.ngrok.io/s_3.jpg", 
+                        "url":"https://2eb8b3758710.ngrok.io/s_3.jpg", 
                         "is_reusable":false
                       }
                     }}
@@ -123,9 +119,9 @@
                     "type":"template",
                     "payload":{
                       "template_type":"generic","elements": [
-                      {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
-                      {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
-                      {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]}
+                      {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://2eb8b3758710.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://2eb8b3758710.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Offers"}]},
+                      {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://2eb8b3758710.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://2eb8b3758710.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Offers"}]},
+                      {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://2eb8b3758710.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://2eb8b3758710.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Offers"}]}
                     ]}
                 }}
             }
@@ -191,9 +187,9 @@
                         "type":"template",
                         "payload":{
                           "template_type":"generic","elements": [
-                          {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
-                          {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]},
-                          {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://7a41cfad3644.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://7a41cfad3644.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://7a41cfad3644.ngrok.io","title":"Offers"}]}
+                          {"title": "Product 1" , "subtitle":"Product Info", "image_url":"https://2eb8b3758710.ngrok.io/w_1.jpg","default_action": {"type": "web_url","url": "https://2eb8b3758710.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Offers"}]},
+                          {"title": "Product 2" , "subtitle":"Product Info", "image_url":"https://2eb8b3758710.ngrok.io/s_1.jpg","default_action": {"type": "web_url","url": "https://2eb8b3758710.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Offers"}]},
+                          {"title": "Product 3" , "subtitle":"Product Info", "image_url":"https://2eb8b3758710.ngrok.io/w_3.jpg","default_action": {"type": "web_url","url": "https://2eb8b3758710.ngrok.io","messenger_extensions": "false","webview_height_ratio": "full"},"buttons":[{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Shop"},{"type":"web_url","url":"https://2eb8b3758710.ngrok.io","title":"Offers"}]}
                         ]}
                     }}
                 }

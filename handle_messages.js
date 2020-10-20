@@ -3,6 +3,7 @@ const fs = require("fs"),
 callSendAPI = require("./callSendAPI"),
 convertAudio = require("./convert_audio"),
 readAudio = require("./read_audio"),
+req_data = require("./req_data"),
 postSpeech = require("./wit_post_speech"),
 witResolve = require("./wit_resolve");
 
@@ -25,6 +26,7 @@ module.exports = async (sender_psid, webhook_event) => {
     });
   // Sleep to make sure the file is saved.
   await sleep (800);
+  var userData = require(`./users/${sender_psid}_data.json`);
   // If not, get the user data from the JSON file.
   } else {
     var userData = require(`./users/${sender_psid}_data.json`);
