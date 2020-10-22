@@ -28,25 +28,47 @@ This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This A
 
 > **FFMPEG Framework**: You need to have FFMPEG framework on your machine and remote server. This is used to transcode the audio file from the Messenger "mp4 format" to "mp3 format" for the Wit speech API. For windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
 
-> **Local Tunnel Service**: To expose the App on your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website.
+> **Local Tunnel Service**: To expose the App on your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website. This will gives you a link to use as a callback url, and to access the App webpages from any browser.
 
 # Installation:
 
-> **requirement**: Node.js preferred version 13.9.0, Facebook Page and Messenger App.
+You can download and install the App on your local machine as following:
 
-Add Facebook Page to your Messenger App in Facebook Developers Dashboard and Generate Token. Rename .sample.env to .env and fill the information. You can find all the information in Facebook Developer Dashboard. The APP_SECRET can be found in the settings tab.
+## Clone the source code:
 
-To run on your local machine, use Local Tunnel Service like NGROK and add the https:// URL in the .env file.
+You can download the code as zip file from the green button "Code", or clone the repository using the command line.
 
-Run:
+```
+git clone https://github.com/khaled-11/Messenger-Sample.git
+```
+
+Now, whether you downloaded or cloned the Repo, go to the main folder "messenger-sample", and rename the file .sample.env to .env . Open the new .env file in any editor, and let's complete the required data.
+
+## Updating .env file:
+
+In the .env file, you need to add APP_ID, APP_SECRET, PAGE_ID, PAGE_ACCESS_TOKEN, VERIFY_TOKEN, WIT_KEY, and URL. For the VERIFY_TOKEN, you can enter any random string which will be used to verify the callback url. For the URL, enter the url from the local tunnel provider. If you use ngrok, run the command ```ngrok http 3370``` and copy the provided ```https://``` link. Then complete the remaining data from the Facebook Developer & Wit.ai accounts.
+
+### Facebook Developer Account:
+
+Once you created an account, if you did't have one, create a new App. Select "Manage Business Integrations", then click continue. When the App loads, scroll down and look in the products for "Messenger". Click setup on the Messenger Icon, and wait for the App to load. When the App loads, on the left menu, under products, you will see Messenger. Expand the menu, and click settings. Scroll down and click "Add or Remove Pages". Continue with your account and choose the page which you want to integrate with the App. Now, you will see the page and a button "Generate Token". Click this button, checnk I understand, and copy the token. This token can now control your page messaging, so don't share it with anyone. Add this token to the environment variables in the .env file. Go back to the same page, you will see the page id under the page name, copy it and add it to the variables. On the same page, you will see the App ID on the top of the page. Copy the app id, and add it to the file. Now, we need only the App secret from the Facebook Developer account. In the same App page, above products, you will see "Settings" tab. Expand the menu, and go to basic settings. You will see the App secret on the top right corner. Click "show", and copy the App secret. Add it to the file, and now we are done with what we need from the Facebook Developer account.
+
+### Wit.ai Account:
+
+After you "Continue with Facebook" on the [Wit.ai](http://wit.ai) website, create "New App". Choose App name, fill the details, and click create. In the App dashboard, click "settings" tab, and copy the "Server Access Token". Add it in the WIT_KEY field in the .env file. Now we have the .env file ready!
+
+## Download Packages & Run the App:
+
+Run the commands below to download the required packages and start the App server.
 
 ```
 npm install
 node index.js
 ```
 
-The App will updated the callback URL, activate Get_Started Button and subscribe to the webhook events.
+If everything went okay, you will see the App updating the Messenger profile and the callback url. After all the updates are done, you will see a link which you can use to test your App. If you have an open conversation with this page before, delete the conversation before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a default starting messages "three in a row". Also, you will see a persistent menu with a "Customer Service" button. This button will handover the conversation to the page inbox, but we need a quick setup to activate it. Also, we will need to add some intents and train the Wit App with some utterances to test this demo.
 
-## Updating the experience
+## Handover Protocol Setup:
 
-You can update the meesages.js & postback.js functions with your logic & flow.
+Go to the Facebook page settings, then advanced Messaging. You will find "Handover Protocol" & "Messenger receiver" click "configure" then choose our App as primary receiver. Choose the page inbox as a secondary receiver, and it is now ready! Go back to the conversation and click "Customer Service" from the persistent menu. You will see a default message, and if you go to the Facebook page Inbox, you will see the conversation. You can assign the conversation to other admins or reply. Once the agent finish with the customer, click "move to done" from the inbox. Now, the handover protocol will hand the thread control back to the bot and follow with a survey.
+
+## Adding Intents, and train the App:
