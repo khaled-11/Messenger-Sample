@@ -17,14 +17,16 @@ This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This A
 
 ### Requirements:
 
-> **Facebook Page**: You need to have a Facebook page to use with this App. When the users chat with your page, this chatbot App will take over the conversation and respond. To create a new Page, visit https://www.facebook.com/pages/create.
+> **Facebook Page**: You need to have a Facebook page to use with this App. When the users chat with your page, this chatbot App will take over the conversation and respond. To create a new Page, click [here](https://www.facebook.com/pages/create).
 
 > **Facebook Developer Account**: You need to have a Facebook Developer Account to create a new App so you can integrate this experience. If you don't have an account, create a new one on the [Facebook Developers website](https://developers.facebook.com/), then click "get started" on the top right of the page.
 
 > **Wit.ai Account**: You need a Wit.ai account to create a new Wit App and define your intents. To create one, go to [Wit.ai website](https://wit.ai/), and click "Continue with Facebook".
 
 
-> **Tools**: Node.js preferred version 13.9.0, .
+> **Node.js & NPM**: Node.js preferred version "latest" & NPM preferred version "latest". If you don't have them on your machine, go to [Node.js Website](https://nodejs.org/en/) to download Node.js & NPM. 
+
+> **FFMPEG Framework**: You need to have FFMPEG framework on your machine and accessible from the command line. The installation process is different for each operating system. For windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
 
 # Installation:
 
