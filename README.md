@@ -15,9 +15,16 @@ This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This A
 - **Referrer & Web Plugin:** If you want to customize a different experience for users based on the source, this App can do that! You can have a different get started message for users chatting directly with your page, users using the plugin on your website, and users with ```https://m.me/page_id?ref=``` links. Also, in the home page of this App, you can find a chat plugin sample to test.
 - **Configuration File:** This App has a configuration file in JSON format. You can add new intents with multiple responses for each, in any format supported by the Messenger platform. Also, you can customize the greeting message, and the persistent menu in this file.
 
-> **requirement**: Node.js preferred version 13.9.0, Facebook Page and Messenger App.
+### Requirements:
+
+> **Facebook Page**: You need to have a Facebook page to use with this App. When the users chat with your page, this chatbot App will take over the conversation and respond. To create a new Page, visit https://www.facebook.com/pages/create.
+
+> **Facebook Developer Account**: You need to have a Facebook Developer Account to create a new App so you can integrate this experience. If you don't have an account, create a new one on the [Facebook Developers website](https://developers.facebook.com/), then click "get started" on the top right of the page.
+
+> **Wit.ai Account**: You need a Wit.ai account to create a new Wit App and define your intents. To create one, go to [Wit.ai website](https://wit.ai/), and click "Continue with Facebook".
 
 
+> **Tools**: Node.js preferred version 13.9.0, .
 
 # Installation:
 
