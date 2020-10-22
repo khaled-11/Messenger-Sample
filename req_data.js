@@ -1,6 +1,4 @@
-/////////////////////////////////////////////////////////////////
-// Asynchronous Module to Request the user Info from Facebook. //
-/////////////////////////////////////////////////////////////////
+/// Function to request the user data from Facebook
 const rp = require('request-promise');
 
 module.exports = async sender_psid => {
@@ -20,7 +18,7 @@ module.exports = async sender_psid => {
     console.log(result);
     }
     catch (e){
-    console.log(e);
+    console.log(e.message);
     }
      return result;  
 };

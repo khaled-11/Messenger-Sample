@@ -1,4 +1,3 @@
-
 /// Function to read the audio from the link //
 const rp = require('request-promise'),
 fs = require("fs");
@@ -17,6 +16,6 @@ module.exports = async (sender_psid, attachmentUrl) => {
     return await (rp(options).pipe(fs.createWriteStream(filePath)));  
   }
   catch (e){
-  console.log(e);
+  console.log(e.message);
   }
 }

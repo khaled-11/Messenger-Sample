@@ -23,7 +23,7 @@ module.exports = async () => {
     console.log("Subscribed page to Events:" , state);
   }
   catch (e){
-      console.log("Page Subscription has errors: ", e)
+      console.log("Page Subscription has errors: ", e.message)
   }
   return state;
 };

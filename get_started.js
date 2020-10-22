@@ -13,7 +13,7 @@ module.exports = async (token) => {
   results = await rp(options);
   }
   catch (e){
-  console.log(e);
+  console.log(e.message);
   }
   console.log("Get Started: ", results)
   return results;  

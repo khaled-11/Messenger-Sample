@@ -26,16 +26,18 @@ app.set("view engine", "ejs");
 const appConfig = (JSON.parse(fs.readFileSync('./config.json', {encoding:'utf8', flag:'r'}))).greetings; 
 
 // Calling ASYNC function to Setup the App in order.
-appStart();
+//appStart();
 async function appStart(){
 // Activate Get Started Button and subscribe the page to App & Events.
 await setGetStarted();
 await subscribePage();
-// Set the Greeting Message and whitelist the App domain.
+// Set the Greeting Message.
 await setGreeting(appConfig.greeting);
+// Whitelist the App domain to send attachments.
 await whiteListURL();
-// Set the persistent menu and the callback URL.
+// Set the persistent menu
 await setPersistentMenu();
+// Set Callback URL
 await setUpCallbackURL();
 }
 

@@ -30,7 +30,7 @@ module.exports = async () => {
     console.log(`You can now test your App using this link: https://m.me/${process.env.PAGE_ID}`);
     }
     catch (e){
-        console.log("Callback URL has error: ", e)
+        console.log("Callback URL has error: ", e.message)
     }
      return state;
 };

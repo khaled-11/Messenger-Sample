@@ -27,7 +27,7 @@ module.exports = async () => {
   console.log("Persistent Menu" , state);
   }
   catch (e){
-    console.log("Persistent menu has error",e)
+    console.log("Persistent menu has error",e.message)
   }
    return state;
 }

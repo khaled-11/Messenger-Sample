@@ -1,13 +1,13 @@
-//// Function to send responses to the user via Graph API ////
+//// Function to send responses to the user using the Graph API ////
 const rp = require('request-promise'),
 fs = require('fs');
 
 module.exports = async (sender_psid, response, action, fileData) => {
-    // Decalre some variables for the request.
+    // Decalre some variables, and get the page access token.
     var request_body;
     var state;
     var token = process.env.PAGE_ACCESS_TOKEN;
-    // Check response type and struch the request body.
+    // Check response type and create the request body.
     if (!action){
         request_body = {
         "recipient": {
@@ -40,6 +40,7 @@ module.exports = async (sender_psid, response, action, fileData) => {
         // If the response is File attachment from the local server. 
         else{
             var fileReaderStream = fs.createReadStream(fileData)
+                // If it is mp3 file
                 if (fileData.includes("mp3")){
                 formData = {
                 recipient: JSON.stringify({
@@ -54,7 +55,8 @@ module.exports = async (sender_psid, response, action, fileData) => {
                 }),
                 filedata: fileReaderStream
                 }
-            }else{
+            // If it is another file format
+            } else {
             formData = {
             recipient: JSON.stringify({
             id: sender_psid
@@ -78,7 +80,7 @@ module.exports = async (sender_psid, response, action, fileData) => {
         }
     }
     catch (e){
-        console.log(e);
+        console.log(e.message);
     }
     return state;
 }

@@ -1,3 +1,4 @@
+// Function to translate audio to text using the Wit App.
 const rp = require('request-promise'),
 fs = require("fs");
 
@@ -24,7 +25,7 @@ module.exports = async (sender_psid) => {
     state = await JSON.parse(await rp(options));
     }
     catch (e){
-      console.log(e)
+      console.log(e.message)
     }
     return state;
 };
