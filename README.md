@@ -26,7 +26,9 @@ This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This A
 
 > **Node.js & NPM**: Node.js preferred version "latest" & NPM preferred version "latest". If you don't have them on your machine, go to [Node.js Website](https://nodejs.org/en/) to download Node.js & NPM. 
 
-> **FFMPEG Framework**: You need to have FFMPEG framework on your machine and accessible from the command line. The installation process is different for each operating system. For windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
+> **FFMPEG Framework**: You need to have FFMPEG framework on your machine and remote server. This is used to transcode the audio file from the Messenger "mp4 format" to "mp3 format" for the Wit speech API. For windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
+
+> **Local Tunnel Service**: To expose the App on your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website.
 
 # Installation:
 
