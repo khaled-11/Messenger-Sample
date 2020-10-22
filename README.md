@@ -1,11 +1,21 @@
 ![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 123 AI-Chatbot
+# 123 AI-Chatbot
 
-This is a quick Messenger Webhook Setup Sample using Node.js.
+This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This App is NLP based, voice-enabled, and utilizes Handover Protocol from/to the page Inbox. In this tutorial, we will explore the App features, and discuss the setup steps. Then, we will explain how to customize your unique experience, and deploy the final experience. Using this sample App, you can create a unique Messenger chatbot experience, only in few minutes. 
 
-# Installation
+## Overview:
+
+### App Features:
+
+- **Messenger Profile:** Once you successfully set up the App, it will update the Messenger profile for the page. It will update the greeting message which the user see before he start the chat with your page. Moreover, it will activate the get started button, and set up a persistent menu.
+- **NLP & Voice-enabled:** The App uses [Wit.ai](https://wit.ai/) for Natural Language Processing, and for speech processing. This will make your chatbot more smarter! Also, you can keep training and improving your App after deploying the final experience.
+- **Referrer & Web Plugin:** If you want to customize a different experience for users based on the source, this App can do that! You can have a different get started message for users chatting directly with your page, users using the plugin on your website, and users with ```https://m.me/page_id?ref=``` links. Also, in the home page of this App, you can find a chat plugin sample to test.
+
+
+
+# Installation:
 
 > **requirement**: Node.js preferred version 13.9.0, Facebook Page and Messenger App.
 
