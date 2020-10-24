@@ -137,8 +137,43 @@ change the greeting and persistent menu from the first section.
 
 ## Add intents in Wit Console:
 
+You can add intents from the wit console.
+
+### Intent without entities:
+
+Add intents without entities for fixed user intents. Example, welcome message or a specific question.
+
+### Intent with entities:
+
+You can have intents with entities. For example, when the user say "I want to buy a phone" or " I want to buy a laptop". In both cases the user want to buy, but in each a different item (entity). There are many other use cases and examples on [the Wit.ai website](https://wit.ai/docs/recipes)
 
 ## Add responses in the configuration file:
+
+After you add the intents and trained the Wit App, you need to enter the responses. Open config .JSON and add a response for each intent and entity.
+
+### Intents only format:
+
+Here is intents only without entities.
+
+### Intents with Entities format:
+
+Intents with entities will look like this.
+
+### Postbacks format:
+
+For each button in the menu or any response, you can create a postback payload. The response will look like this. 
+
+### Text & Quick Replies response:
+
+To send a quick reply or text response, enter the following payload.
+
+### Template response:
+
+To send a template response, enter the following payload.
+
+### Attachement response:
+
+To send a quick an audio or image attachment, enter the following payload.
 
 
 ## Deploy the final experience:
