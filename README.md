@@ -82,6 +82,11 @@ Go go [Glitch website](https://glitch.com/), and create a new project. Click "im
 
 Whether you cloned the code on your local machine or you are using [Glitch](https://glitch.com/), we need to gather some data. In the main folder (Messenger-sample), you will see a file called .sample.env, open this file. You will see APP_ID, APP_SECRET, PAGE_ID & PAGE_ACCESS_TOKEN. We will get these information from the Facebook developer account. The VERIFY_TOKEN is any random string you choose to verify the call back URL. We will get the Wit key from the [Wit.ai](https://wit.ai/) website after we create an App. The URL field is the ```https://``` link for the App server. If you use your local machine, enter the local tunnel link. For ngrok, run the command ```ngrok http 3000``` and use the provided ```https://``` link. If you use Glitch, enter the project URL from the share button.
 
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://techolopia.com/wp-content/uploads/2020/10/env.jpg">
+</div>
+
 ### Facebook Developer Account:
 
 After you create an account, if you didn't have one, create a new App.  Select "Manage Business Integrations", then click continue. When the App  loads, scroll down and look in the products for "Messenger". Click  setup on the Messenger Icon, and wait for the App to load. Scroll down and click "Add or Remove  Pages". Continue with your account and choose the page which you want to  integrate with the App. Now, you will see the page and a button  "Generate Token". Click this button, check "I understand", and copy the token. This token can now control your page messaging, so don't share it with anyone. Add this token to the environment variables in the .env  file. Go back to the same page, you will see the page id under the page name, copy it and add it to the variables. On the same page, you will  see the App ID on the top of the page. Copy the app id, and add it to  the file. Now, we need only the App secret from the Facebook Developer  account. In the same App page, above products, you will see "settings"  tab. Expand the menu, and go to basic settings. You will see the App  secret on the top right corner. Click "show", and copy the App secret.  Add it to the file, and now we finished with what we need from the  Facebook Developer account. 
