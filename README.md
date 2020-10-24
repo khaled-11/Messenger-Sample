@@ -80,7 +80,7 @@ Go go [Glitch website](https://glitch.com/), and create a new project. Click "im
 
 ## Update .env file:
 
-Whether you cloned the code on your local machine or you are using [Glitch](https://glitch.com/), we need to gather some data. In the main folder (Messenger_sample), you will see a file called .sample.env, open this file. You will see APP_ID, APP_SECRET, PAGE_ID & PAGE_ACCESS_TOKEN. We will get these information from the Facebook developer account. The VERIFY_TOKEN is any random string you choose to verify the call back URL. We will get the Wit key from the [Wit.ai](https://wit.ai/) website we create an App. The URL field is the ```https://``` link for the App server. If you use your local machine, enter the local tunnel link. For ngrok, run the command ```ngrok http 3000``` and use the provided ```https://``` link. If you use Glitch, enter the project URL from the share button.
+Whether you cloned the code on your local machine or you are using [Glitch](https://glitch.com/), we need to gather some data. In the main folder (Messenger-sample), you will see a file called .sample.env, open this file. You will see APP_ID, APP_SECRET, PAGE_ID & PAGE_ACCESS_TOKEN. We will get these information from the Facebook developer account. The VERIFY_TOKEN is any random string you choose to verify the call back URL. We will get the Wit key from the [Wit.ai](https://wit.ai/) website after we create an App. The URL field is the ```https://``` link for the App server. If you use your local machine, enter the local tunnel link. For ngrok, run the command ```ngrok http 3000``` and use the provided ```https://``` link. If you use Glitch, enter the project URL from the share button.
 
 ### Facebook Developer Account:
 
