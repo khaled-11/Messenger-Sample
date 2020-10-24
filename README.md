@@ -35,7 +35,7 @@ When you connect this App to your Facebook page, it can reply to the page messag
 
 > **Facebook Developer Account**:  You need a Facebook Developer Account to use this  experience. If you don't have an account, create a new one from the [Facebook Developers website](https://developers.facebook.com/). Click "get started" on the top right of the page, and complete the steps.
 
-> **Wit.ai Account**: You need a Wit.ai account to create a new Wit App and train it for your intents. To create one, go to [Wit.ai website](https://wit.ai/), and click "Continue with Facebook".
+> **Wit.ai Account**: You need a Wit.ai account to create a new Wit App and train it for the intents. To create one, go to [Wit.ai website](https://wit.ai/), and click "Continue with Facebook".
 
 
 > **Node.js & NPM**: Node.js preferred version "latest" & NPM preferred version "latest". If you don't have them on your machine, go to [Node.js Website](https://nodejs.org/en/) to download Node.js & NPM. You can use [Glitch](https://glitch.com/) to run the App without installing Node.js on your machine.
