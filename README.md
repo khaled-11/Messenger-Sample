@@ -115,10 +115,34 @@ npm install
 node index.js
 ```
 
-The App will now connect the Facebook page, and update the callback URL. If there is any errors, you need to double check the environment variables. After the updated, you will  see a link which you can use to access and test the App. Delete any open conversation between you and the page before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a  default starting messages "three in a row". Also, you will see a  persistent menu with a "Customer Service" button. This button will  handover the conversation to the page inbox, but we need a quick setup  to activate it. Also, we will need to add some intents and train the Wit  App with some utterances to test this demo.
+The App will now connect the Facebook page, and update the callback URL. If there is any errors, you need to double check the environment variables. After the updates, you will  see a link which you can use to access and test the App. Delete any open conversation between you and the page before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a  default starting messages "three in a row". Also, you will see a  persistent menu with a "Customer Service" button. This button will  handover the conversation to the page inbox, but we need a quick setup  to activate it. Also, we will need to add some intents and train the Wit  App with some utterances to test this demo.
 
 ## Handover Protocol Setup:
 
 Go to the Facebook page settings, then advanced Messaging. You will find "Handover Protocol" & "Messenger receiver" click "configure" then choose our App as primary receiver. Choose the page inbox as a secondary receiver, and it is now ready! Go back to the conversation and click "Customer Service" from the persistent menu. You will see a default message, and if you go to the Facebook page Inbox, you will see the conversation. You can assign the conversation to other admins or reply. Once the agent finish with the customer, click "move to done" from the inbox. Now, the handover protocol will hand the thread control back to the bot and follow with a survey.
 
 ## Adding Intents, and train the App:
+
+From the Wit console, you can add intents and train the app with utterances.
+
+
+
+# Customize and deploy:
+
+You can customize this experience and change the responses from JSON file.
+
+## Page Messenger Profile:
+
+change the greeting and persistent menu from the first section.
+
+## Add intents in Wit Console:
+
+
+## Add responses in the configuration file:
+
+
+## Deploy the final experience:
+
+We saw how to use Glitch to run the App in this tutorial. You can keep the App running on Glitch by using any ping tool. Read this article that explains how to do this in details. Also, you can deploy the experience to any other cloud hosting service if preferred. The steps are almost the same everywhere.
+
+
