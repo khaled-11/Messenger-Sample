@@ -9,7 +9,7 @@
 </div>
 <br>
 
-This is a Facebook Messenger Node.js chatbot App with Wit.ai  integration. This App is NLP based, voice-enabled, and invokes Handover  Protocol from/to the page Inbox. In this tutorial, we will explore the  App features, and discuss the setup steps. Then, we will explain how to  customize your unique experience, and deploy the final App. With this  App, you can create a unique Messenger chatbot experience, only in few  minutes. You don't need to write or change any code, and you can train the App using the simple Wit.ai console. You can edit the App responses and configuration from a JSON file. It is very easy process!
+This is a Facebook Messenger Node.js chatbot App with Wit.ai  integration. This App is NLP based, voice-enabled, and invokes Handover  Protocol from/to the page Inbox. In this tutorial, we will explore the  App features, and discuss the setup steps. Then, we will explain how to  customize your unique experience, and deploy the final App. With this  App, you can create a unique Messenger chatbot experience, only in few  minutes. You don't need to write or change any code, and you can train the App using the simple Wit.ai console. You can edit the App responses and configuration from a JSON file. It is a very easy process!
 
 ## Overview:
 
