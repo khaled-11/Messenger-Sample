@@ -19,7 +19,7 @@ This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This A
 When you connect this App to your Facebook page, it will take over the page messaging. The App will read the message, and use Wit.ai to understand the user intent from a text or voice. Then the App will respond to the user with a predefined response which we defined for each intent. Moreover, the App can pass the conversation to the page inbox if the user needs customer service. In this case, the chatbot App will listen, and won't respond to the user input. The human agent can pass the conversation back to the chatbot from the page Inbox. 
 
 <div align ="center">
-![Graph] [(https://techolopia.com/wp-content/uploads/2020/10/graph.jpg)]
+[![Graph] (https://techolopia.com/wp-content/uploads/2020/10/graph.jpg)]
 </div>
 
 ### App Features:
