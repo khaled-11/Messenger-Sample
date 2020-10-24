@@ -46,14 +46,18 @@ When you connect this App to your Facebook page, it can reply to the page messag
 
 # Installation:
 
-You can download and install the App on your local machine as following:
+You can download and install the App on your local machine to test as following:
 
-## Clone the source code:
+## Fork or Clone this Repo:
 
-You can download the code as zip file from the green button "Code", or clone the repository using the command line.
+If you fork the repository, this will create a copy from the repository on your GitHub account. This can help you track your changes, and use your copy instead. You can also clone and download this copy direct.
 
 ```
+//Sources:
 git clone https://github.com/khaled-11/Messenger-Sample.git
+//Forked:
+git clone https://github.com/your-user-name/Messenger-Sample.git
+
 ```
 
 Now, whether you downloaded or cloned the Repo, go to the main folder "messenger-sample", and rename the file .sample.env to .env . Open the new .env file in any editor, and let's complete the required data.
