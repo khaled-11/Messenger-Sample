@@ -148,9 +148,12 @@ To test this demo, we need to create some sample intents & entities that matches
 
 ## Test the App, and voice:
 
-Now, we finished all the steps to test this sample application. Open the conversation with your page again and test the intents. Also, test the App with audio input.
+Now, we finished all the steps to test this sample application. Open the conversation with your page again and test the intents. Also, test the App with audio input. It will work, and now the time to customize your experience.
 
-
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/4FqAL3BY9xr52biFbL/giphy.gif">
+</div>
 
 # Customize and deploy:
 
