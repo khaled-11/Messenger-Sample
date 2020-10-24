@@ -62,6 +62,10 @@ git clone https://github.com/khaled-11/Messenger-Sample.git
 git clone https://github.com/your-user-name/Messenger-Sample.git
 
 ```
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/Hl9bupOTxJpzEWQPOQ/giphy.gif">
+</div>
 
 ## Glitch:
 
