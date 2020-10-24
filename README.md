@@ -69,8 +69,6 @@ git clone https://github.com/your-user-name/Messenger-Sample.git
 
 Go go [Glitch website](https://glitch.com/), and create a new project. Click "import from GitHub" and enter the repository link. If you forked the Repo, enter your link ```https://github.com/your-user-name/Messenger-Sample.git```. If not, enter the link for source code repository ```https://github.com/khaled-11/Messenger-Sample.git```.
 
-[![Glitch](https://media.giphy.com/media/RBXhHW3kNz5wN07meK/giphy.gif)](https://glitch.com)
-
 <br>
 <div align ="center">
   <img width="800" height="400" src="https://media.giphy.com/media/RBXhHW3kNz5wN07meK/giphy.gif">
