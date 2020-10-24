@@ -115,7 +115,7 @@ npm install
 node index.js
 ```
 
-The App will now connect the Facebook, and update the callback URL. If there is any errors, you need to double check the environment variables. After the updated, you will  see a link which you can use to access and test the App. Delete any open conversation between you and the page before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a  default starting messages "three in a row". Also, you will see a  persistent menu with a "Customer Service" button. This button will  handover the conversation to the page inbox, but we need a quick setup  to activate it. Also, we will need to add some intents and train the Wit  App with some utterances to test this demo.
+The App will now connect the Facebook page, and update the callback URL. If there is any errors, you need to double check the environment variables. After the updated, you will  see a link which you can use to access and test the App. Delete any open conversation between you and the page before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a  default starting messages "three in a row". Also, you will see a  persistent menu with a "Customer Service" button. This button will  handover the conversation to the page inbox, but we need a quick setup  to activate it. Also, we will need to add some intents and train the Wit  App with some utterances to test this demo.
 
 ## Handover Protocol Setup:
 
