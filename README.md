@@ -24,11 +24,11 @@ When you connect this App to your Facebook page, it will take over the page mess
 
 ### App Features:
 
-- **Messenger Profile:** Once you successfully set up the App, it will update the Messenger profile for the page. It will update the greeting message which the user see before he start the chat with your page. Moreover, it will activate the get started button, and set up a persistent menu.
-- **NLP & Voice-enabled:** The App uses [Wit.ai](https://wit.ai/) for Natural Language Processing, and for speech processing. This will make your chatbot more smarter! You can add new intents at any time from the Wit.ai App Dashboard. Also, you can keep training and improving your App after deploying the final experience.
+- **Messenger Profile:** When you setup the App, it will update the Messenger profile for the page. It will update the greeting message which the user see before he start the chat with  your page. Moreover, it will activate the get started button, and set up  a persistent menu.
+- **NLP & Voice-enabled:** The App uses [Wit.ai](https://wit.ai/) for Natural Language Processing. It also supports voice recognition. This will  make your chatbot more smarter! You can add new intents at any time from the Wit.ai App Dashboard. Also, you can keep training and improving  your App while it is live.
 - **Handover Protocol:** This App is ready to use handover protocol from/to the page Inbox. In the persistent menu, there is a default button that will pass the conversation to the page Inbox. The human agent can pass the conversation back to the App from the Inbox.
-- **Referrer & Web Plugin:** If you want to customize a different experience for users based on the source, this App can do that! You can have a different get started message for users chatting directly with your page, users using the plugin on your website, and users with ```https://m.me/page_id?ref=``` links. Also, in the home page of this App, you can find a chat plugin sample to test.
-- **Configuration File:** This App has a configuration file in JSON format. You can add new intents with multiple responses for each, in any format supported by the Messenger platform. Also, you can customize the greeting message, and the persistent menu in this file.
+- **Referrer & Web Plugin:** If you want to have a different experience for specific users! This App can have a different get started message for users based on the sources.  You can use links like ```https://m.me/page_id?ref=``` or QR codes. Each can have a different experience by using different starting Message. Moreover, the home page for this page have a Chat plugin with some sample controls.
+- **Configuration File:** This App has a configuration file in JSON format. You can add new intents and entities with any response type and count for each. Also, you can  customize the greeting message, and the persistent menu from this file.
 
 ### Requirements:
 
