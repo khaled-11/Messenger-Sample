@@ -67,7 +67,7 @@ git clone https://github.com/your-user-name/Messenger-Sample.git
 
 ### Import from GitGub:
 
-Go go [Glitch website](https://glitch.com/), and create a new project. Click import from GitHub and enter the repository link. If you forked the Repo, enter your link ```https://github.com/your-user-name/Messenger-Sample.git```. If not, enter the link for source code repository ```https://github.com/khaled-11/Messenger-Sample.git```.
+Go go [Glitch website](https://glitch.com/), and create a new project. Click "import from GitHub" and enter the repository link. If you forked the Repo, enter your link ```https://github.com/your-user-name/Messenger-Sample.git```. If not, enter the link for source code repository ```https://github.com/khaled-11/Messenger-Sample.git```.
 
 Now, whether you downloaded or cloned the Repo, go to the main folder "messenger-sample", and rename the file .sample.env to .env . Open the new .env file in any editor, and let's complete the required data.
 
