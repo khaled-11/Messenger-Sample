@@ -86,7 +86,7 @@ Whether you cloned the code on your local machine or you are using [Glitch](http
 
 <br>
 <div align ="center">
-  <img width="800" height="400" src="https://techolopia.com/wp-content/uploads/2020/10/env.jpg">
+  <img width="800" height="400" src="https://media.giphy.com/media/c4jQ9FNVolUxRGt59E/giphy.gif">
 </div>
 
 ### Facebook Developer Account:
