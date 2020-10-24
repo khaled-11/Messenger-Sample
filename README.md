@@ -53,9 +53,10 @@ You can download and install the App on your local machine to test as following:
 If you fork the repository, this will create a copy from the repository on your GitHub account. This can help you track your changes, and use your copy instead. You can also clone and download this copy direct.
 
 ```
-//Sources:
+// Clone the source:
 git clone https://github.com/khaled-11/Messenger-Sample.git
-//Forked:
+
+// If you forked, clone your copy:
 git clone https://github.com/your-user-name/Messenger-Sample.git
 
 ```
