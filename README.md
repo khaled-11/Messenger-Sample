@@ -109,14 +109,13 @@ Go to [Wit.ai](http://wit.ai) website, and click "Continue with Facebook". Creat
 
 ## Download Packages & Run the App:
 
-Run the commands below to download the required packages and start the App server.
-
+Now, we have completed the required environment variables and the App is ready to run. If you use Glitch, open a new terminal from tools and run the following two commands. If you use your local machine, open a new terminal and navigate to the App folder. Run the same two commands in order. The first command will download the required packages to the project folder. The second one will start the App server.
 ```
 npm install
 node index.js
 ```
 
-If everything went okay, you will see the App updating the Messenger profile and the callback url. After all the updates are done, you will see a link which you can use to test your App. If you have an open conversation with this page before, delete the conversation before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a default starting messages "three in a row". Also, you will see a persistent menu with a "Customer Service" button. This button will handover the conversation to the page inbox, but we need a quick setup to activate it. Also, we will need to add some intents and train the Wit App with some utterances to test this demo.
+The App will now connect the Facebook, and update the callback URL. If there is any errors, you need to double check the environment variables. After the updated, you will  see a link which you can use to access and test the App. Delete any open conversation between you and the page before you proceed. Go to the link, and you will see an updated greeting message, and the Get Started Button. When you click get started, you will see a  default starting messages "three in a row". Also, you will see a  persistent menu with a "Customer Service" button. This button will  handover the conversation to the page inbox, but we need a quick setup  to activate it. Also, we will need to add some intents and train the Wit  App with some utterances to test this demo.
 
 ## Handover Protocol Setup:
 
