@@ -130,13 +130,21 @@ The App will now connect the Facebook page, and update the callback URL. If ther
 
 ## Handover Protocol Setup:
 
-Go to the Facebook page settings, then advanced Messaging. You will find "Handover Protocol" & "Messenger receiver" click "configure" then choose our App as primary receiver. Choose the page inbox as a secondary receiver, and it is now ready! Go back to the conversation and click "Customer Service" from the persistent menu. You will see a default message, and if you go to the Facebook page Inbox, you will see the conversation. You can assign the conversation to other admins or reply. Once the agent finish with the customer, click "move to done" from the inbox. Now, the handover protocol will hand the thread control back to the bot and follow with a survey.
+Go to the Facebook page settings, then advanced Messaging. You will find  "Handover Protocol" & "Messenger receiver". Click "configure" then  choose this App as primary receiver. Choose the page inbox as a secondary receiver, and it is now ready! When the user click "Customer Service" from the persistent menu. The App will pass the conversation to the page inbox. You can assign the conversation to other admins or reply to the user.  After you finish with the customer, click "move to done" from the  inbox. Now, the handover protocol will hand the thread control back to the bot. In this Demo we follow with a survey, but you can have a different response. 
 
-## Adding Intents, and train the App:
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/0GASNlAbFS0zBCETbY/giphy.gif">
+</div>
 
-From the Wit console, you can add intents and train the app with utterances.
+## Add Intents, and train the App:
 
+To test this demo, we need to create some sample intents & entities that matches the config file. Go to the Wit App console, and start by adding utterances from the dashboard. Add "I want to shop" and create a new intent called "shop_products".  Train the App with similar utterances for this intent. This intent will identify the user intent if he wants to shop the products. Train the App for intent called "welcome". Choose some utterances like "welcome", "how are you". Finally, create a new intent called "question". This intent will have two entities as in the config file. One entity is "return product", and the other is "buy product". Train the App with utterances like "I want to {return product}", "I want to {buy product}".
 
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/4FqAL3BY9xr52biFbL/giphy.gif">
+</div>
 
 # Customize and deploy:
 
