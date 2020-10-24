@@ -46,11 +46,13 @@ When you connect this App to your Facebook page, it can reply to the page messag
 
 # Installation:
 
-You can download and install the App on your local machine to test as following:
+You can download and run the App on your local machine, or you can use [Glitch](https://glitch.com/):
 
-## Fork or Clone this Repo:
+## Local Machine:
 
-If you fork the repository, this will create a copy from the repository on your GitHub account. This can help you track your changes, and use your copy instead. You can also clone and download this copy direct.
+### Fork or Clone this Repo:
+
+If you fork the repository, this will create a copy from the repository on your GitHub account. This can help you track your personal changes. Also, you can also clone this source copy without fork.
 
 ```
 // Clone the source:
@@ -61,9 +63,15 @@ git clone https://github.com/your-user-name/Messenger-Sample.git
 
 ```
 
+## Glitch:
+
+### Import from GitGub:
+
+Go go [Glitch website](https://glitch.com/), and create a new project. Click import from GitHub and enter the repository link. If you forked the Repo, enter your link ```https://github.com/your-user-name/Messenger-Sample.git```. If not, enter the link for source code repository ```https://github.com/khaled-11/Messenger-Sample.git```.
+
 Now, whether you downloaded or cloned the Repo, go to the main folder "messenger-sample", and rename the file .sample.env to .env . Open the new .env file in any editor, and let's complete the required data.
 
-## Updating .env file:
+### Update .env file:
 
 In the .env file, you need to add APP_ID, APP_SECRET, PAGE_ID, PAGE_ACCESS_TOKEN, VERIFY_TOKEN, WIT_KEY, and URL. For the VERIFY_TOKEN, you can enter any random string which will be used to verify the callback url. For the URL, enter the url from the local tunnel provider. If you use ngrok, run the command ```ngrok http 3370``` and copy the provided ```https://``` link. Then complete the remaining data from the Facebook Developer & Wit.ai accounts.
 
