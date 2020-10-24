@@ -40,7 +40,7 @@ When you connect this App to your Facebook page, it can reply to the page messag
 
 > **Node.js & NPM**: Node.js preferred version "latest" & NPM preferred version "latest". If you don't have them on your machine, go to [Node.js Website](https://nodejs.org/en/) to download Node.js & NPM. 
 
-> **FFMPEG Framework**: You need to have FFMPEG framework on your machine and remote server. This is used to transcode the audio file from the Messenger "mp4 format" to "mp3 format" for the Wit speech API. For windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
+> **FFMPEG Framework**: You need to have FFMPEG framework on your machine and remote server. This is used to transcode the audio file from the Messenger "mp4 format" to "mp3 format" for the Wit speech API. In windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
 
 > **Local Tunnel Service**: To expose the App from your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website. This will gives you a link to use as a callback url, and to access the App webpages from any browser.
 
