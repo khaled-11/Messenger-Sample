@@ -2,6 +2,7 @@ const express = require('express'),
 bodyParser = require('body-parser'),
 fs = require("fs"),
 path = require("path"),
+http = require("http"),
 subscribePage = require('./page_subscribe'),
 setUpCallbackURL = require('./messenger_setup'),
 handlePostbacks = require('./handle_postbacks'),
@@ -24,6 +25,11 @@ app.set("view engine", "ejs");
 
 // Reading greeting messages in the config file and setup the Messenger App.
 const appConfig = (JSON.parse(fs.readFileSync('./config.json', {encoding:'utf8', flag:'r'}))).greetings; 
+
+// Ping the App to keep Glitch awake.
+setInterval(() => {
+  http.get(`http://${process.env.URL.substring(8)}/`);
+}, 88000);
 
 // Calling ASYNC function to Setup the App in order.
 appStart();
