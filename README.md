@@ -139,12 +139,18 @@ Go to the Facebook page settings, then advanced Messaging. You will find  "Hando
 
 ## Add Intents, and train the App:
 
-To test this demo, we need to create some sample intents & entities that matches the config file. Go to the Wit App console, and start by adding utterances from the dashboard. Add "I want to shop" and create a new intent called "shop_products".  Train the App with similar utterances for this intent. This intent will identify the user intent if he wants to shop the products. Train the App for intent called "welcome". Choose some utterances like "welcome", "how are you". Finally, create a new intent called "question". This intent will have two entities as in the config file. One entity is "return product", and the other is "buy product". Train the App with utterances like "I want to {return product}", "I want to {buy product}".
+To test this demo, we need to create some sample intents & entities that matches the config file. Go to the Wit App console, and start by adding utterances from the dashboard. Add "I want to shop" and create a new intent called "shop_products". Train the App with similar utterances for this same intent. This intent will help the App understand if the user wants to shop the products. Train the App for a new intent called "welcome". Choose some utterances like "welcome", "how are you". Finally, create a new intent called "question". This intent will have two entities as in the config file. One entity is "return product", and the other is "buy product". Train the App with utterances like "I want to {return product}", "I want to {buy product}".
 
 <br>
 <div align ="center">
   <img width="800" height="400" src="https://media.giphy.com/media/4FqAL3BY9xr52biFbL/giphy.gif">
 </div>
+
+## Test the App, and voice:
+
+Now, we finished all the steps to test this sample application. Open the conversation with your page again and test the intents. Also, test the App with audio input.
+
+
 
 # Customize and deploy:
 
