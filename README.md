@@ -33,16 +33,16 @@ When you connect this App to your Facebook page, it can reply to the page messag
 
 > **Facebook Page**: You need to have a Facebook page to use with this App. When the users chat with your page, this chatbot App will take over the conversation and respond. To create a new Page, click [here](https://www.facebook.com/pages/create).
 
-> **Facebook Developer Account**: You need to have a Facebook Developer Account to create a new App so you can integrate this experience. If you don't have an account, create a new one on the [Facebook Developers website](https://developers.facebook.com/), then click "get started" on the top right of the page.
+> **Facebook Developer Account**:  You need a Facebook Developer Account to use this  experience. If you don't have an account, create a new one from the [Facebook Developers website](https://developers.facebook.com/). Click on "get started" on the top right of the page, and complete the steps.
 
-> **Wit.ai Account**: You need a Wit.ai account to create a new Wit App and define your intents. To create one, go to [Wit.ai website](https://wit.ai/), and click "Continue with Facebook".
+> **Wit.ai Account**: You need a Wit.ai account to create a new Wit App and train it for your intents. To create one, go to [Wit.ai website](https://wit.ai/), and click "Continue with Facebook".
 
 
 > **Node.js & NPM**: Node.js preferred version "latest" & NPM preferred version "latest". If you don't have them on your machine, go to [Node.js Website](https://nodejs.org/en/) to download Node.js & NPM. 
 
 > **FFMPEG Framework**: You need to have FFMPEG framework on your machine and remote server. This is used to transcode the audio file from the Messenger "mp4 format" to "mp3 format" for the Wit speech API. For windows, you can read [this article](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up.
 
-> **Local Tunnel Service**: To expose the App on your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website. This will gives you a link to use as a callback url, and to access the App webpages from any browser.
+> **Local Tunnel Service**: To expose the App from your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website. This will gives you a link to use as a callback url, and to access the App webpages from any browser.
 
 # Installation:
 
