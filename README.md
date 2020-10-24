@@ -52,7 +52,7 @@ You can download and run the App on your local machine, or you can use [Glitch](
 
 ### Fork or Clone this Repo:
 
-If you fork the repository, this will create a copy from the repository on your GitHub account. This can help you track your personal changes. Also, you can clone this source copy without fork.
+If you fork the repository, this will create a copy from the repository on your GitHub account. This can help you track your personal changes. Also, you can clone this source copy without fork. Open a new terminal and run the following commands to download the Repo to your machine.
 
 ```
 // Clone the source:
