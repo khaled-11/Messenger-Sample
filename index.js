@@ -47,10 +47,8 @@ await setPersistentMenu();
 await setUpCallbackURL();
 }
 
-var i = 0;
 // The landing page for the server
 app.get("/", function (req, res){
-  i++;
   // Send Index Page with greeting message for web plugin
   res.render("index",{web_greeting_logged_in:appConfig.web_greeting_logged_in, web_greeting_logged_out:appConfig.web_greeting_logged_out})
 });
