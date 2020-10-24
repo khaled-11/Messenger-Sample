@@ -100,7 +100,12 @@ After you create an account, if you didn't have one, create a new App.  Select "
 
 ### Wit.ai Account:
 
-After you "Continue with Facebook" on the [Wit.ai](http://wit.ai) website, create "New App". Choose App name, fill the details, and click create. In the App dashboard, click "settings" tab, and copy the "Server Access Token". Add it in the WIT_KEY field in the .env file. Now we have the .env file ready!
+Go to [Wit.ai](http://wit.ai) website, and click "Continue with Facebook". Create new App, fill the details, and wait for the App to load. In the app dashboard, click setting and copy the "Server Access Token". Add it for the WIT_KEY field in the .env file. Now we have the .env file ready!
+
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/Y9jJnkZQapefSmux6h/giphy.gif">
+</div>
 
 ## Download Packages & Run the App:
 
