@@ -20,9 +20,7 @@ When you connect this App to your Facebook page, it will take over the page mess
 
 [![API Save](https://techolopia.com/wp-content/uploads/2020/09/flow-1.jpg)](https://m.me/118754656624049)
 
-<div align ="center">
 [![Graph] (https://techolopia.com/wp-content/uploads/2020/10/graph.jpg)]()
-</div>
 
 ### App Features:
 
