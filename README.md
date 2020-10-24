@@ -42,7 +42,7 @@ When you connect this App to your Facebook page, it can reply to the page messag
 
 > **FFMPEG Framework**: This framework help trans code audio formats from "mp4" to "mp3". The installation is different for each operating system. For windows users, you can read [this article] (http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/) which explains how to set it up. If you cannot set it up, use [Glitch](https://glitch.com/) to run the App, and you will have it ready to use.
 
-> **Local Tunnel Service**: To expose the App from your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website. This will gives you a link to use as a callback url, and to access the App webpages from any browser. If you use [Glitch](https://glitch.com/), you don't need a local tunnel service. We will see how to use Glitch as an alternative to local machine, and keep the App live.
+> **Local Tunnel Service**: To expose the App from your local machine to public, you need a local tunnel service. If you don't have one, download ngrok from [Ngrok.com](http://ngrok.com) website. This will gives you a link to use as a callback url, and to access the App webpages from any browser. If you use [Glitch](https://glitch.com/), you don't need a local tunnel service. We will see how to use [Glitch](https://glitch.com/) as an alternative to local machine, and how keep the App live.
 
 # Installation:
 
