@@ -7,7 +7,7 @@ This is a Facebook Messenger Node.js chatbot App with Wit.ai integration. This A
 
 <center>
 <imgwidth="100" height="100" src="https://techolopia.com/wp-content/uploads/2020/10/graph.jpg">
-<center>
+</center>
 
 ## Overview:
 
