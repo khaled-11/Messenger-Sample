@@ -28,6 +28,7 @@ const appConfig = (JSON.parse(fs.readFileSync('./config.json', {encoding:'utf8',
 
 // Ping the App to keep Glitch awake.
 setInterval(() => {
+  console.log("ping");
   http.get(`http://${process.env.URL.substring(8)}/`);
 }, 88000);
 
