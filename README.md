@@ -213,7 +213,11 @@ After you add the intents and train the Wit App, you need to enter the responses
 
 This section explain what responses you can add in the config file. There is an example for each category and type.
 
-### Intent without entities:
+### Intents:
+
+The intent category has some error messages and the reponses for intents with or without entities. 
+
+#### Intent without entities:
 
 The format for the intent without entities is as the following example. The intent name will have reponses array, and each response can be a different type. You can refer to the response types section to mix any type of response.
 <br>
@@ -227,9 +231,9 @@ The format for the intent without entities is as the following example. The inte
                         "type":"template",
                         "payload":{
                           "template_type":"generic","elements": [
-                          {"title": "Product 1" , "subtitle":"Product Info", .........},
-                          {"title": "Product 2" , "subtitle":"Product Info", .........},
-                          {"title": "Product 3" , "subtitle":"Product Info", .........}
+                          {"title": "Product 1" , "subtitle":"Product Info", },
+                          {"title": "Product 2" , "subtitle":"Product Info", },
+                          {"title": "Product 3" , "subtitle":"Product Info", }
                         ]}
                     }}
                 }
@@ -237,7 +241,7 @@ The format for the intent without entities is as the following example. The inte
         },
 ```
 
-### Intent with entities:
+#### Intent with entities:
 
 The Format for intents with entities is as the following example. The intent name will have entities instead of responses. For each entity, we will add the entity category name and the entity name. Then we will enter the responses as for intents and postbacks for each entity. You can add entity_not_in_config_errors & entity_type_not_found_error to handle some errors. These errors can be the entity not included in the Wit App, or the entity not found in the config file.
 <br>
