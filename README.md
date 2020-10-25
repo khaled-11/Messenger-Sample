@@ -204,7 +204,7 @@ To send a quick an audio or image attachment, enter the following payload.
 
 ## Deploy the final experience:
 
-You might have used Glitch instead of using the local machine. If so, there is a function that will ping the App server and keep the project awake. If not, you can use Glitch as we discussed in this tutorial. You may also use any cloud or server that supports Node.js Applications.
+You might have used Glitch instead of using the local machine. If so, there is a function that will ping the App server and keep the project active. You can use Glitch as we discussed in this tutorial for your final live experience. You may also use any cloud or server that supports Node.js Applications.
 
 <br>
 <div align ="center">
