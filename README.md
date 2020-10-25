@@ -198,7 +198,7 @@ Open the config.JSON file, and you will see the first two sections called "greet
         }
     ]
     
-    ```
+    JSON ```
 
 
 ## Add intents:
