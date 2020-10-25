@@ -152,20 +152,26 @@ Now, we finished all the steps to test this sample application. Open the convers
 
 <br>
 <div align ="center">
-  <img width="800" height="400" src="https://media.giphy.com/media/4FqAL3BY9xr52biFbL/giphy.gif">
+  <img width="800" height="400" src="https://media.giphy.com/media/GKCob51w3Dd51yCRth/giphy.gif">
 </div>
 
 # Customize and deploy:
 
-You can customize this experience and change the responses from JSON file.
+To customize this experience, you need to create intents and train the Wit App. Then, you can add responses to these intents in the config.JSON file. You can add responses for post-backs same way as for the intents. Also, you can change the greeting messages, and edit the persistent menu items from the same file.
 
-## Page Messenger Profile:
-
-change the greeting and persistent menu from the first section.
-
-## Add intents in Wit Console:
+## Add intents:
 
 You can add intents from the wit console.
+
+
+
+You can have intents with entities. For example, when the user say "I want to buy a phone" or " I want to buy a laptop". In both cases the user want to buy, but in each a different item (entity). There are many other use cases and examples on [the Wit.ai website](https://wit.ai/docs/recipes)
+
+## Add responses in config.JSON:
+
+After you add the intents and trained the Wit App, you need to enter the responses. Open config .JSON and add a response for each intent and entity.
+
+## Response Categories:
 
 ### Intent without entities:
 
@@ -173,39 +179,36 @@ Add intents without entities for fixed user intents. Example, welcome message or
 
 ### Intent with entities:
 
-You can have intents with entities. For example, when the user say "I want to buy a phone" or " I want to buy a laptop". In both cases the user want to buy, but in each a different item (entity). There are many other use cases and examples on [the Wit.ai website](https://wit.ai/docs/recipes)
+test
 
-## Add responses in the configuration file:
+### Post-backs:
 
-After you add the intents and trained the Wit App, you need to enter the responses. Open config .JSON and add a response for each intent and entity.
+Add intents without entities for fixed user intents. Example, welcome message or a specific question.
 
-### Intents only format:
-
-Here is intents only without entities.
-
-### Intents with Entities format:
-
-Intents with entities will look like this.
-
-### Postbacks format:
+## Response Types:
 
 For each button in the menu or any response, you can create a postback payload. The response will look like this. 
 
-### Text & Quick Replies response:
+### Text & Quick Replies:
 
 To send a quick reply or text response, enter the following payload.
 
-### Template response:
+### Generic Template:
 
 To send a template response, enter the following payload.
 
-### Attachement response:
+### Attachements:
 
 To send a quick an audio or image attachment, enter the following payload.
 
 
 ## Deploy the final experience:
 
-We saw how to use Glitch to run the App in this tutorial. You can keep the App running on Glitch by using any ping tool. Read this article that explains how to do this in details. Also, you can deploy the experience to any other cloud hosting service if preferred. The steps are almost the same everywhere.
+You might have used Glitch instead of using the local machine. If so, there is a function that will ping the App server and keep the project awake. If not, you can use Glitch as we discussed in this tutorial. You may also use any cloud or server that supports Node.js Applications.
+
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/QoF7aN9gMDOg6aMYwF/giphy.gif">
+</div>
 
 
