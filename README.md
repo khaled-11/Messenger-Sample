@@ -159,6 +159,48 @@ Now, we finished all the steps to test this sample application. Open the convers
 
 To customize this experience, you need to create intents and train the Wit App. Then, you can add responses to these intents in the config.JSON file. You can add responses for post-backs same way as for the intents. Also, you can change the greeting messages, and edit the persistent menu items from the same file.
 
+
+## Change greetings & persistent menu:
+
+Open the config.JSON file, and you will see the first two sections called "greeting" and "persistent_menu".
+
+``` JSON
+
+    "greetings":{
+        "greeting":"Hi {{user_first_name}}, welcome to our page Chatbot!",
+        "web_greeting_logged_out":"Welcome to our website, please login to keep your chat history!",
+        "web_greeting_logged_in":"Welcome to our website. you can continue with your account to see the history!"
+    },
+
+    "persistent_menu":[
+        {
+            "locale": "default",
+            "composer_input_disabled": false,
+            "call_to_actions": [
+                {
+                "type": "web_url",
+                "title": "Facebook Page",
+                "url": "https://www.facebook.com/{{page_id}}"
+                },  {
+                    "type": "web_url",
+                    "title": "Website",
+                    "url": "https://www.techolopia.com"
+                }, {
+                    "type": "web_url",
+                    "title": "Shop",
+                    "url": "https://www.facebook.com/techolopia"
+                }, {
+                    "type": "postback",
+                    "title": "Customer Service",
+                    "payload": "CS"
+                }
+            ]
+        }
+    ]
+    
+    ```
+
+
 ## Add intents:
 
 You can add intents from the wit console.
