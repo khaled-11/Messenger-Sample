@@ -200,12 +200,21 @@ The response payload can have a text with a string value only. This will send th
 
 ### Generic Template:
 
-To send a template response, enter the following payload.
+You can have a template response with many elements is carousel. The payload will be an array of elements. Each element in this array can have different buttons. You can have elements with or without images by removing the image_url field.
+
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/HOjBQ1p6pmD95jjerI/giphy.gif">
+</div>
 
 ### Attachements:
 
-To send a quick an audio or image attachment, enter the following payload.
+You can send a file from the server as a response. The file can be text, image, or audio file. The payload of this response will be the path to the file.
 
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/oMrB84X6YqeuJYWXbB/giphy.gif">
+</div>
 
 ## Deploy the final experience:
 
