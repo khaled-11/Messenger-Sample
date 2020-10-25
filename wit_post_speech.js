@@ -16,7 +16,7 @@ module.exports = async (sender_psid) => {
         method: 'POST',
         uri: `https://api.wit.ai/speech?v=20200513`,
         headers: {
-          Authorization: `Bearer ${process.env.wit_key}`,
+          Authorization: `Bearer ${process.env.WIT_KEY}`,
           ContentType: "application/json",
           TransferEncoding:"chunked"
       },
