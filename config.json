@@ -50,7 +50,7 @@
                   }, {
                     "content_type":"text",
                     "title":"Neutral 😐",
-                    "payload":"Neutral_PAYLOAD"
+                    "payload":"NEUTRAL_PAYLOAD"
                   }, {
                       "content_type":"text",
                       "title":"Not Happy 🙁",
