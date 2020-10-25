@@ -162,7 +162,7 @@ To customize this experience, you need to create intents and train the Wit App. 
 
 ## Change greetings & persistent menu:
 
-Open the config.JSON file in the main directory. You will see the first two sections called "greeting" and "persistent_menu". In the greeting section, you will see three different messages. The first one is for regular Messenger users. The second and third are for the the web plugin in App the home page. Then, yo will see the persistent menu items. You can add many items and choose the type for each. To update the greeting and the persistent menu, you will need to restart the App server.
+Open the config.JSON file in the main directory. You will see the first two sections called "greeting" and "persistent_menu". In the greeting section, you will see three different messages. The first one is for regular Messenger users. The second and third are for the the web plugin in App the home page. Then, you will see the persistent menu items. You can add many items and choose the type for each. To update the greeting and the persistent menu, you will need to restart the App server.
 
 ``` JSON
 
