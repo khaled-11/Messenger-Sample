@@ -162,7 +162,7 @@ To customize this experience, you need to create intents and train the Wit App. 
 
 ## Change greetings & persistent menu:
 
-Open the config.JSON file, and you will see the first two sections called "greeting" and "persistent_menu".
+Open the config.JSON file in the main directory. You will see the first two sections called "greeting" and "persistent_menu". In the greeting section, you will see three different messages. The first one is for regular Messenger users. The second and third are for the the web plugin in App the home page. Then, yo will see the persistent menu items. You can add many items and choose the type for each. To update the greeting and the persistent menu, you will need to restart the App server.
 
 ``` JSON
 
@@ -203,29 +203,136 @@ Open the config.JSON file, and you will see the first two sections called "greet
 
 ## Add intents:
 
-You can add intents from the wit console.
-
-
-
-You can have intents with entities. For example, when the user say "I want to buy a phone" or " I want to buy a laptop". In both cases the user want to buy, but in each a different item (entity). There are many other use cases and examples on [the Wit.ai website](https://wit.ai/docs/recipes)
+You can add more intents and train the App from the Wit.ai console. You can have intents with or without entities. Intents without entities can be for specific question or welcome intent. Entities add more specifications for the intent. For example, when the user say "I want to buy a phone" or " I want to buy a laptop". In both cases the user want to buy, but in each a different item (entity). There are many use cases and examples on [the Wit.ai website](https://wit.ai/docs/recipes).
 
 ## Add responses in config.JSON:
 
-After you add the intents and trained the Wit App, you need to enter the responses. Open config .JSON and add a response for each intent and entity.
+After you add the intents and train the Wit App, you need to enter the responses. Open config .JSON and add a response for each intent and entity.
 
 ## Response Categories:
 
+This section explain what responses you can add in the config file. There is an example for each category and type.
+
 ### Intent without entities:
 
-Add intents without entities for fixed user intents. Example, welcome message or a specific question.
+The format for the intent without entities is as the following example. The intent name will have reponses array, and each response can be a different type. You can refer to the response types section to mix any type of response.
+<br>
+``` JSON
+        "shop_products":{
+            "responses":[
+                {
+                    "response" : {"text": "Here is our popular products:"}
+                }, {
+                    "response" : {"attachment":{
+                        "type":"template",
+                        "payload":{
+                          "template_type":"generic","elements": [
+                          {"title": "Product 1" , "subtitle":"Product Info", .........},
+                          {"title": "Product 2" , "subtitle":"Product Info", .........},
+                          {"title": "Product 3" , "subtitle":"Product Info", .........
+                        ]}
+                    }}
+                }
+            ]
+        },
+```
 
 ### Intent with entities:
 
-test
-
+The Format for intents with entities is as the following example. The intent name will have entities instead of responses. For each entity, we will add the entity category name and the entity name. Then we will enter the responses as for intents and postbacks for each entity. You can add entity_not_in_config_errors & entity_type_not_found_error to handle some errors. These errors can be the entity not included in the Wit App, or the entity not found in the config file.
+<br>
+``` JSON
+        "question":{
+            "entities":
+            [ 
+                {
+                    "entity":"question_type",
+                    "name":"return product",
+                    "responses":[
+                        {
+                            "response" : {"text": "Hi {{user_first_name}}, can you tell me when did you buy this product?", "quick_replies": [
+                                {
+                                  "content_type":"text",
+                                  "title":"Less than 7 days",
+                                  "payload":"DEMO"
+                                }, {
+                                  "content_type":"text",
+                                  "title":"More than 7 days",
+                                  "payload":"DEMO"
+                                }
+                              ]}
+                        }
+                    ]
+                },                 
+                {
+                    "entity":"question_type",
+                    "name":"buy product",
+                    "responses":[
+                        {
+                            "response" : {"text": "Hi {{user_first_name}}, You can shop the product list here...!", "quick_replies": [
+                                {
+                                  "content_type":"text",
+                                  "title":"Shop",
+                                  "payload":"SHOP_PRODUCTS"
+                                }, {
+                                  "content_type":"text",
+                                  "title":"Customer Service",
+                                  "payload":"CS"
+                                }
+                              ]}
+                        }
+                    ]
+                }
+            ], 
+            "entity_not_in_config_errors":
+            {
+                "text": "I think you need to ask question, but I am having a trouble with the question type.\nPlease choose from below:","quick_replies": [
+                    {
+                      "content_type":"text",
+                      "title":"Buy Product",
+                      "payload":"DEMO"
+                    }, {
+                      "content_type":"text",
+                      "title":"Return Product",
+                      "payload":"DEMO"
+                    }
+                ]
+            },   
+            "entity_type_not_found_error":
+            {
+                "text": "I think you need to ask question, but I am having a trouble with the question type.\nPlease choose from below:","quick_replies": [
+                    {
+                      "content_type":"text",
+                      "title":"Buy Product",
+                      "payload":"DEMO"
+                    }, {
+                      "content_type":"text",
+                      "title":"Return Product",
+                      "payload":"DEMO"
+                    }
+                ]
+            } 
+        }
+```
 ### Post-backs:
 
-Add intents without entities for fixed user intents. Example, welcome message or a specific question.
+For post-backs, it is like intents without entities. We will have same array with responses, but with the postback payload instead of the intent name. For each payload you will create in the menu or buttons in responses, you need an item here. In this section, you will find default messages for handover protocol. The App sent these messages when the user moved to/from the page inbox. You can edit these messages as well.
+<br>
+``` JSON
+    "postbacks":{
+        "HANDOVER_TO_INBOX":[
+            {"response" : {"text": "{{user_first_name}}, one of our representatives will help you shortly!"}}
+        ],
+
+        "GUEST_TO_INBOX":[
+            {"response" : {"text": "{{user_first_name}}, please login with your Facebook account to connect with our customer service!"}}
+        ],
+        
+        "HAPPY_PAYLOAD":[
+            {
+                "response" : {"text": "We are excited, {{user_first_name}}! We are so happy that we were able to assist you today!"}
+            }
+```
 
 ## Response Types:
 
