@@ -229,7 +229,7 @@ The format for the intent without entities is as the following example. The inte
                           "template_type":"generic","elements": [
                           {"title": "Product 1" , "subtitle":"Product Info", .........},
                           {"title": "Product 2" , "subtitle":"Product Info", .........},
-                          {"title": "Product 3" , "subtitle":"Product Info", .........
+                          {"title": "Product 3" , "subtitle":"Product Info", .........}
                         ]}
                     }}
                 }
