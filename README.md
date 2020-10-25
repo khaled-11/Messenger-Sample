@@ -356,7 +356,7 @@ You can have a template response with many elements is carousel. The payload wil
   <img width="800" height="400" src="https://media.giphy.com/media/HOjBQ1p6pmD95jjerI/giphy.gif">
 </div>
 
-### Attachements:
+### Attachments:
 
 You can send a file from the server as a response. The file can be text, image, or audio file. The payload of this response will be the path to the file.
 
