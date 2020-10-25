@@ -367,7 +367,7 @@ You can send a file from the server as a response. The file can be text, image, 
 
 ## Deploy the final experience:
 
-You might have used Glitch instead of using your local machine. If so, there is a function that will ping the App server and keep the project active. You can keep the App live on Glitch or on your local machine. if you expect high traffic, and want to scale. You may use any cloud hosting service that supports Node.js Applications.
+You might have used Glitch instead of using your local machine. If so, there is a function that will ping the App server and keep the project active. You can keep the App live on Glitch or on your local machine. If you expect high traffic, and want to scale. You may use any cloud hosting service that supports Node.js Applications.
 
 <br>
 <div align ="center">
