@@ -215,7 +215,36 @@ This section explain what responses you can add in the config file. There is an 
 
 ### Intents:
 
-The intent category has some error messages and the reponses for intents with or without entities. 
+The intent category has some error messages and the reponses for intents with or without entities. These error messages handles the technical issues and out of scope intents. The format for the intents only response is different than intents with entities.
+
+``` JSON
+    "intents":{
+        "voice_read_error":{
+                    "response" : {"text": "I am really Sorry, we are having technical issues right now.\nPlease can you try again!"}
+        },
+        "no_sound":{
+                    "response" : {"text": "I am sorry, but I didn't hear any words."}
+        },
+        "setup_needed":{
+                    "response" : {"text": "I am really Sorry, the voice is not set up yet!"}
+        },
+        "non_audio":{
+                    "response" : {"text": "Sorry, we accept only voice attachments!"}
+        },
+        "technical_issue":{
+                    "response" : {"text": "I am really Sorry, we are having technical issues right now.\nPlease can you try again!"}
+        },
+        "out_of_scope":{"responses":[
+            {
+                "response" : { "text":"I am so sorry, I didn't catch '{{text}}'.\nCan you repeat that please"}
+            }, {
+                "response":{"file":"./audio/blank.mp3"}
+            }, {
+                "response" : { "text":"This is a test audio file!"}
+            }
+        ]},
+
+```
 
 #### Intent without entities:
 
@@ -320,7 +349,7 @@ The Format for intents with entities is as the following example. The intent nam
 ```
 ### Post-backs:
 
-For post-backs, it is like intents without entities. We will have same array with responses, but with the postback payload instead of the intent name. For each payload you will create in the menu or buttons in responses, you need an item here. In this section, you will find default messages for handover protocol. The App sent these messages when the user moved to/from the page inbox. You can edit these messages as well.
+For post-backs section, it is like intents without entities. We will have same array with responses, but with the postback payload instead of the intent name. For each payload you will create in the menu or buttons in responses, you need an item here. In this section, you will find default messages for handover protocol. The App sent these messages when the user moved to/from the page inbox. You can edit these messages as well.
 <br>
 ``` JSON
     "postbacks":{
@@ -371,11 +400,8 @@ You can send a file from the server as a response. The file can be text, image, 
 
 ## Deploy the final experience:
 
-You might have used Glitch instead of using your local machine. If so, there is a function that will ping the App server and keep the project active. You can keep the App live on Glitch or on your local machine. If you expect high traffic, and want to scale. You may use any cloud hosting service that supports Node.js Applications.
+Whether you used Glitch or your local machine and you don't expect high traffic. You have the option to keep the App running on your local machine or Glitch. If you want to scale your App, you can use any cloud hosting service. Make sure the hosting service supports Node.js Apps, and check for FFMPEG framework. For [Heroku Apps](https://elements.heroku.com), you can add the build using the following command ``` heroku buildpacks:add https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git ```. Read [this Article](https://devcenter.heroku.com/articles/deploying-nodejs) to see how to deploy Node.js App to Heroku. Also, [this article](https://elements.heroku.com/buildpacks/jonathanong/heroku-buildpack-ffmpeg-latest) explains more options to use FFMPEG.
 
-<br>
-<div align ="center">
-  <img width="800" height="400" src="https://media.giphy.com/media/QoF7aN9gMDOg6aMYwF/giphy.gif">
-</div>
+
 
 
