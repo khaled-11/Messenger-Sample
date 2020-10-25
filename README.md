@@ -125,7 +125,7 @@ The App will now connect the Facebook page, and update the callback URL. If ther
 
 <br>
 <div align ="center">
-  <img width="800" height="400" src="https://media.giphy.com/media/pPRd9lFzLwfghjJkyY/giphy.gif">
+  <img width="800" height="400" src="https://media.giphy.com/media/NGIc6kOhoFzaXzh50A/giphy.gif">
 </div>
 
 ## Handover Protocol Setup:
