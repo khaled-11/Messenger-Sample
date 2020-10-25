@@ -187,11 +187,16 @@ Add intents without entities for fixed user intents. Example, welcome message or
 
 ## Response Types:
 
-For each button in the menu or any response, you can create a postback payload. The response will look like this. 
+As we saw, each intent, entity, and post-back can have many responses in an array structure. Each response can be in the form of the following types
 
 ### Text & Quick Replies:
 
-To send a quick reply or text response, enter the following payload.
+The response payload can have a text with a string value only. This will send the user only the string in the text field. You can add emoji to the text using copy and paste. If you want to add quick replies with the text, add quick_replies array to the response. Enter the replies elements, and choose web_url or postbacks for the buttons.
+
+<br>
+<div align ="center">
+  <img width="800" height="400" src="https://media.giphy.com/media/AIXFkYbRGlFmCuoCz3/giphy.gif">
+</div>
 
 ### Generic Template:
 
